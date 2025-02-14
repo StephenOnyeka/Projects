@@ -1,0 +1,11 @@
+/* Arrows */
+
+.slider-container .slick-prev:before,
+ .slider-container .slick-next:before
+{
+    color: black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
