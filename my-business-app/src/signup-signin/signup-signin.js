@@ -1,6 +1,6 @@
 
 
-// A signup and signin application
+// A signup and signin application; just so we know.
 import React, { useRef, useEffect, useState } from "react";
 import HoMe from "./hoMe";
 import "./signup-signin.css";
@@ -69,9 +69,7 @@ function Signin_signup() {
       console.log("Success", data.name);
 
       setData(data);
-      // window.location.reload();
       window.location.href = "/";
-      // setShowHome(true);
       alert(`Account created successfully`);
     }
   };
