@@ -4,7 +4,7 @@ import Footer1 from "../footer1/footer1";
 import Footer2 from "../footer2/footer2";
 
 import Data from "../products.json";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Men() {
   const [items, setItems] = useState(Data);
@@ -23,7 +23,7 @@ function Men() {
           <h1>Men</h1>
           <div className="featuredProducts_container">
             {items
-              .filter((product) => product.category == "Men")
+              .filter((product) => product.category === "Men")
               .map((product) => (
                 <div className="product_cards">
                   <Link to={`/product/${product.id}`}>
@@ -53,7 +53,7 @@ function Men() {
           <h1>Men</h1>
           <div className="featuredProducts_container">
             {items
-              .filter((product) => product.category == "Men")
+              .filter((product) => product.category === "Men")
               .map((product) => (
                 <div className="product_cards">
                   <Link to={`/product/${product.id}`}>

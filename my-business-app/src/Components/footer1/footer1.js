@@ -14,22 +14,22 @@ function Footer1() {
               <div className='BOX'>
                   <ul>
                     <h3>For Her</h3>
-                    <li><a href=""> Women Jeans</a> </li>
-                    <li><a href=""> Tops and Shirts</a> </li>
-                    <li><a href=""> Women Jackets</a> </li>
-                    <li><a href=""> Heels and Flats</a> </li>
-                    <li><a href=""> Women Accessories</a> </li>
+                    <li><a href="/"> Women Jeans</a> </li>
+                    <li><a href="/"> Tops and Shirts</a> </li>
+                    <li><a href="/"> Women Jackets</a> </li>
+                    <li><a href="/"> Heels and Flats</a> </li>
+                    <li><a href="/"> Women Accessories</a> </li>
                   </ul>
               </div>
               
               <div className='BOX'>                  
                   <ul>
                     <h3>For Him</h3>
-                    <li><a href=""> Men Jeans</a> </li>
-                    <li><a href=""> Men Shirts</a> </li>
-                    <li><a href=""> Men Shoes</a> </li>
-                    <li><a href=""> Men Accessories</a> </li>
-                    <li><a href=""> Men Jackets</a> </li>
+                    <li><a href="/"> Men Jeans</a> </li>
+                    <li><a href="/"> Men Shirts</a> </li>
+                    <li><a href="/"> Men Shoes</a> </li>
+                    <li><a href="/"> Men Accessories</a> </li>
+                    <li><a href="/"> Men Jackets</a> </li>
                   </ul>
               </div>
         

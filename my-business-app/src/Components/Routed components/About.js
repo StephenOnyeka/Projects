@@ -152,7 +152,7 @@ function About({ cartItems, subtotal }) {
                   <div className="about-3_link">
                     <ul>
                       <li>
-                        <a href="">
+                        <a href="/">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
@@ -165,7 +165,7 @@ function About({ cartItems, subtotal }) {
                       </li>
 
                       <li>
-                        <a href="">
+                        <a href="/">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
@@ -177,7 +177,7 @@ function About({ cartItems, subtotal }) {
                         </a>
                       </li>
                       <li>
-                        <a href="">
+                        <a href="/">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
@@ -189,7 +189,7 @@ function About({ cartItems, subtotal }) {
                         </a>
                       </li>
                       <li>
-                        <a href="">
+                        <a href="/">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"

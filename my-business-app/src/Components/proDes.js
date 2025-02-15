@@ -9,7 +9,7 @@ function ProDes({ addToCart }) {
   const [products, setProducts] = useState(Data);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const product = Data.find((product) => product.id === parseInt(id));
 
@@ -138,7 +138,7 @@ function ProDes({ addToCart }) {
                 <div className="productDescription_container">
                   <div className="productDescription_content-1">
                     <section id="im_sec">
-                      <img src={product.image} />
+                      <img alt="product image" src={product.image} />
                     </section>
 
                     <section>
@@ -183,7 +183,7 @@ function ProDes({ addToCart }) {
                       >
                         <div className="relatedProducts_cards">
                           <Link to={`/product/${products.id}`}>
-                            <img src={products.image} alt="" />
+                            <img alt="product image" src={products.image} />
                           </Link>
                           <h4>{products.title}</h4>
                           <span>{products.category}</span>

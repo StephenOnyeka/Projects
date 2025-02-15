@@ -1,5 +1,5 @@
 import React,{useState, useEffect} from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import Footer1 from "../footer1/footer1";
 import Footer2 from "../footer2/footer2";

@@ -10,7 +10,7 @@ function Footer2() {
         <div className="footer2_container">
           <ul>
             <li>
-              <a href="">
+              <a href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -22,7 +22,7 @@ function Footer2() {
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -34,7 +34,7 @@ function Footer2() {
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -45,7 +45,7 @@ function Footer2() {
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -57,7 +57,7 @@ function Footer2() {
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -69,7 +69,7 @@ function Footer2() {
               </a>
             </li>
             <li>
-              <a href="">
+              <a href="/">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

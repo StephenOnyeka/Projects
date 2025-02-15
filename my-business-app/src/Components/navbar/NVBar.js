@@ -8,9 +8,7 @@ function NVBar({ cartItems, subtotal }) {
   // const [menuOpen, setMenuOpen] = useState(false);
   // const [icon, setIcon] = useState(false);
 
-  const handleShowNavbar = () => {
-    setShowNavbar(!showNavbar);
-  };
+  const handleShowNavbar = () => {setShowNavbar(!showNavbar)};
 
   return (
     <nav id="navbar">

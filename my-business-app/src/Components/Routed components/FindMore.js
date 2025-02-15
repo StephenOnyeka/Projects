@@ -9,7 +9,7 @@ function FindMore() {
         <h1>Find More of Our Collections</h1>
         <div className="featuredProducts_container">
           <div className="product_cards">
-            <img src="\images\Products\2.jpg" alt="" />
+            <img src="/images/Products/2.jpg" alt="" />
             <h4>Red Printed T-shirts</h4>
             <span>Men</span>
             <p>$50.00</p>
