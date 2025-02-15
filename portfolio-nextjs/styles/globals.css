@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  background-color: #0b001a;
+
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* font-family: Montserrat; */
+  font-family: "Montserrat", serif;
+  font-weight: 300;
+/* overflow-x: hidden; */
+}
+
+.name{
+        color: #8338ec;
+      background: linear-gradient(93deg, #8338ec 49.3%, #b923ff 87.76%);
+      /* background: linear-gradient(93deg, #a855f7  49.3%, #ec4899  87.76%); */
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bname{
+        /* color: #8338ec; */
+      /* background: linear-gradient(93deg, #8338ec 49.3%, #b923ff 87.76%); */
+      background: linear-gradient(93deg, #dac4fa  49.3%, #eabdff  87.76%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+.gradient-border {
+  border-image: linear-gradient(93deg, #8338ec 49.3%, #b923ff 87.76%) 1;
+}
+
+.shiny-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  /* width: 50%; */
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(-25deg);
+  transition: left 0.75s;
+}
+
+.shiny-button:hover::before {
+  left: 125%;
+}
+/* .Typewriter__wrapper {
+  color: #ffffff;
+  font-family: "Montserrat", serif;
+  font-weight: 400;
+  font-size: 32px;
+} */
