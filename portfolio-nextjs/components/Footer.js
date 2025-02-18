@@ -47,7 +47,7 @@ function Footer() {
                 />
               </Link>
               <Link
-                href="https://github.com/StephenOnyeka/StephenOnyeka"
+                href="https://github.com/StephenOnyeka/"
                 className="shiny-button border border-white/30 p-2.5 rounded-full"
               >
                 <FaGithub
