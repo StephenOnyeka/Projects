@@ -204,6 +204,111 @@ function HOme() {
             {/* <div className="flex flex-col gap-4 font-Georgia text-purple-200/90"> */}
             <div className="flex flex-col gap-4 font-Georgia bname">
               <Link
+                className="shiny-button"
+                href="https://paint-site-p.vercel.app/"
+              >
+                <Image
+                  src={"/images/projects/Screenshot 2025-02-07 040251.png"}
+                  width={500}
+                  height={300}
+                  className="aspect-auto border p-2 gradient-border"
+                />
+              </Link>
+              <div className="flex justify-between">
+                <p className="text-xl font-bold"> Adoration Paints</p>
+                <div className="flex gap-4">
+                  <Link
+                    className="hover:border hover:rounded-full p-2"
+                    href="https://paint-site-p.vercel.app/"
+                  >
+                    <HiMiniArrowTopRightOnSquare size={20} color={"white"} />
+                  </Link>
+                  <Link
+                    className="hover:border hover:rounded-full p-2"
+                    href="https://github.com/StephenOnyeka/Projects/tree/main/paint-site"
+                  >
+                    <RiGithubLine size={20} color={"white"} />
+                  </Link>
+                </div>
+              </div>
+              <p className="italic text-lg max-sm:text-md">
+                Adoration Paints is a premium painting company. I created this
+                using NextJS, TailwindCSS and Nodejs.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 font-Georgia bname">
+              <Link
+                className="shiny-button"
+                href="https://demo-ajci.vercel.app/"
+              >
+                <Image
+                  src={"/images/Screenshot 2025-02-19 010607.png"}
+                  width={500}
+                  height={300}
+                  className="aspect-auto border p-2 gradient-border"
+                />
+              </Link>
+              <div className="flex justify-between">
+                <p className="text-xl font-bold"> Lenis</p>
+                <div className="flex gap-4">
+                  <Link
+                    className="hover:border hover:rounded-full p-2"
+                    href="https://demo-ajci.vercel.app/"
+                  >
+                    <HiMiniArrowTopRightOnSquare size={20} color={"white"} />
+                  </Link>
+                  <Link
+                    className="hover:border hover:rounded-full p-2"
+                    href="https://github.com/StephenOnyeka/Projects/tree/main/nextjs-shopify-demo"
+                  >
+                    <RiGithubLine size={20} color={"white"} />
+                  </Link>
+                </div>
+              </div>
+              <p className="italic text-lg max-sm:text-md">
+                Lenis is a skin care company to focuses on beauty standard with
+                nature. Offers skin consultation with dermatologists and sells
+                certified for proper skin
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 font-Georgia bname">
+              <Link
+                className="shiny-button"
+                href="https://demo-ajci.vercel.app/"
+              >
+                <Image
+                  src={"/images/Screenshot 2025-02-19 010423.png"}
+                  width={500}
+                  height={300}
+                  className="aspect-auto border p-2 gradient-border"
+                />
+              </Link>
+              <div className="flex justify-between">
+                <p className="text-xl font-bold"> AJCI Foods</p>
+                <div className="flex gap-4">
+                  <Link
+                    className="hover:border hover:rounded-full p-2"
+                    href="https://demo-ajci.vercel.app/"
+                  >
+                    <HiMiniArrowTopRightOnSquare size={20} color={"white"} />
+                  </Link>
+                  <Link
+                    className="hover:border hover:rounded-full p-2"
+                    href="https://github.com/StephenOnyeka/Projects/tree/main/nextjs-shopify-demo"
+                  >
+                    <RiGithubLine size={20} color={"white"} />
+                  </Link>
+                </div>
+              </div>
+              <p className="italic text-lg max-sm:text-md">
+                AJCI Foods is a company that brings foods and snacks to market.
+                Organically raised from farm to table. Built Nextjs and
+                TailwindCSS.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-4 font-Georgia bname">
+              <Link
                 href="https://business-app-don.vercel.app/"
                 className="shiny-button"
               >
@@ -311,75 +416,6 @@ function HOme() {
               </p>
             </div>
             {/* <div className="flex flex-col gap-4 font-Georgia text-purple-200/90"> */}
-            <div className="flex flex-col gap-4 font-Georgia bname">
-              <Link
-                className="shiny-button"
-                href="https://paint-site-p.vercel.app/"
-              >
-                <Image
-                  src={"/images/projects/Screenshot 2025-02-07 040251.png"}
-                  width={500}
-                  height={300}
-                  className="aspect-auto border p-2 gradient-border"
-                />
-              </Link>
-              <div className="flex justify-between">
-                <p className="text-xl font-bold"> Adoration Paints</p>
-                <div className="flex gap-4">
-                  <Link
-                    className="hover:border hover:rounded-full p-2"
-                    href="https://paint-site-p.vercel.app/"
-                  >
-                    <HiMiniArrowTopRightOnSquare size={20} color={"white"} />
-                  </Link>
-                  <Link
-                    className="hover:border hover:rounded-full p-2"
-                    href="https://github.com/StephenOnyeka/Projects/tree/main/paint-site"
-                  >
-                    <RiGithubLine size={20} color={"white"} />
-                  </Link>
-                </div>
-              </div>
-              <p className="italic text-lg max-sm:text-md">
-                Adoration Paints is a premium painting company. I created this
-                using NextJS, TailwindCSS and Nodejs.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-4 font-Georgia bname">
-              <Link
-                className="shiny-button"
-                href="https://demo-ajci.vercel.app/"
-              >
-                <Image
-                  src={"/images/Screenshot 2025-02-19 010607.png"}
-                  width={500}
-                  height={300}
-                  className="aspect-auto border p-2 gradient-border"
-                />
-              </Link>
-              <div className="flex justify-between">
-                <p className="text-xl font-bold"> Adoration Paints</p>
-                <div className="flex gap-4">
-                  <Link
-                    className="hover:border hover:rounded-full p-2"
-                    href="https://demo-ajci.vercel.app/"
-                  >
-                    <HiMiniArrowTopRightOnSquare size={20} color={"white"} />
-                  </Link>
-                  <Link
-                    className="hover:border hover:rounded-full p-2"
-                    href="https://github.com/StephenOnyeka/Projects/tree/main/paint-site"
-                  >
-                    <RiGithubLine size={20} color={"white"} />
-                  </Link>
-                </div>
-              </div>
-              <p className="italic text-lg max-sm:text-md">
-                Adoration Paints is a premium painting company. I created this
-                using NextJS, TailwindCSS and Nodejs.
-              </p>
-            </div>
           </div>
         </div>
       </div>
@@ -522,4 +558,3 @@ function HOme() {
 }
 
 export default HOme;
-
