@@ -267,8 +267,7 @@ function HOme() {
               </div>
               <p className="italic text-lg max-sm:text-md">
                 Lenis is a skin care company to focuses on beauty standard with
-                nature. Offers skin consultation with dermatologists and sells
-                certified for proper skin
+                nature and also Offer skin consultation with dermatologists. Brought to life uisng TailwindCSS and NextJS
               </p>
             </div>
             <div className="flex flex-col gap-4 font-Georgia bname">
@@ -302,7 +301,7 @@ function HOme() {
               </div>
               <p className="italic text-lg max-sm:text-md">
                 AJCI Foods is a company that brings foods and snacks to market.
-                Organically raised from farm to table. Built Nextjs and
+                Organically raised from farm to table. Built with Nextjs and
                 TailwindCSS.
               </p>
             </div>
