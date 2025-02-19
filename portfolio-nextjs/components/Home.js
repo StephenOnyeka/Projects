@@ -345,6 +345,41 @@ function HOme() {
                 using NextJS, TailwindCSS and Nodejs.
               </p>
             </div>
+
+            <div className="flex flex-col gap-4 font-Georgia bname">
+              <Link
+                className="shiny-button"
+                href="https://demo-ajci.vercel.app/"
+              >
+                <Image
+                  src={"/images/Screenshot 2025-02-19 010607.png"}
+                  width={500}
+                  height={300}
+                  className="aspect-auto border p-2 gradient-border"
+                />
+              </Link>
+              <div className="flex justify-between">
+                <p className="text-xl font-bold"> Adoration Paints</p>
+                <div className="flex gap-4">
+                  <Link
+                    className="hover:border hover:rounded-full p-2"
+                    href="https://demo-ajci.vercel.app/"
+                  >
+                    <HiMiniArrowTopRightOnSquare size={20} color={"white"} />
+                  </Link>
+                  <Link
+                    className="hover:border hover:rounded-full p-2"
+                    href="https://github.com/StephenOnyeka/Projects/tree/main/paint-site"
+                  >
+                    <RiGithubLine size={20} color={"white"} />
+                  </Link>
+                </div>
+              </div>
+              <p className="italic text-lg max-sm:text-md">
+                Adoration Paints is a premium painting company. I created this
+                using NextJS, TailwindCSS and Nodejs.
+              </p>
+            </div>
           </div>
         </div>
       </div>
