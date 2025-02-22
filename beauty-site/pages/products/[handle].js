@@ -117,7 +117,7 @@ function Handle() {
   return (
     // <div className="mt-20">
     <div className="mx-auto lg:max-w-7xl">
-      <main className=" pt-14 sm:pt-20 max-sm:px-4 px-6 mb-4 lg:px-8">
+      <main className=" pt-4 sm:pt-12 md:pt-20 max-sm:px-4 px-6 mb-4 lg:px-8">
         <Link href={'/products'}>
           <IoArrowBackCircleOutline size={40} className="hover:opacity-50 mb-4"/>
         </Link>
@@ -213,7 +213,7 @@ function Handle() {
         <p className="mt-24 mb-8 font-semibold text-lg font-Libre">
           Customers also viewed
         </p>{" "}
-        <div className="flex flex-wrap gap-x-6 lg:gap-x-8  gap-y-4 ">
+        <div className="flex flex-wrap gap-x-4 md:gap-x-4 lg:gap-x-8  gap-y-4 ">
           {relatedProducts.map((item) => {
             return (
               <>
