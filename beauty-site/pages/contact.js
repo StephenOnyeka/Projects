@@ -23,13 +23,14 @@ function Contact() {
           <div className="flex max-md:flex-wrap items-center justify-between gap-4 max-md:gap-8">
             <div className="w-full md:w-1/2 flex flex-col gap-4 lg:gap-6">
               <div>
-              <p className="text-2xl max-md:text-2xl text-black/70">
-                Contact Us
-              </p>
-              <div className="text-4xl lg:text-5xl xl:text-6xl font-semibold py-4 max-sm:py-2 font-Libre">
-                Have questions? <br />
-                <div className="pt-2 max-sm:pt-0">Get in touch!</div>
-              </div></div>
+                <p className="text-2xl max-md:text-2xl text-black/70">
+                  Contact Us
+                </p>
+                <div className="text-4xl lg:text-5xl xl:text-6xl font-semibold py-4 max-sm:py-2 font-Libre">
+                  Have questions? <br />
+                  <div className="pt-2 max-sm:pt-0">Get in touch!</div>
+                </div>
+              </div>
               {/* <p className="text-gray-500 text-md leading-8 "> */}
               <p className="text-gray-500 text-md leading-6 md:text-lg md:leading-10">
                 Adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -38,11 +39,11 @@ function Contact() {
               <div className="flex flex-col gap-2 text-black/60">
                 <span className="flex items-center gap-4">
                   <IoLocationOutline className="size-5 text-orange-400" />
-                  <p className="text-md">785 15h Street, Office 478 Boston</p>
+                  <p className="text-md">Lekki street, Office 478</p>
                 </span>
                 <span className="flex items-center gap-4">
                   <HiOutlineDevicePhoneMobile className="size-5 text-orange-400" />
-                  <p className="text-md text-black">+1 323 468 45 70</p>
+                  <p className="text-md text-black">+234 806 371 3505</p>
                 </span>
                 <span className="flex items-center gap-4">
                   <BsEnvelope className="size-5 text-orange-400" />
