@@ -13,7 +13,7 @@ function Footer() {
         <div className="bg-[#69422F]">
           <div className="pt-16 pb-8 max-w-7xl mx-auto max-lg:px-8 max-sm:px-4">
             {/* <div className="flex justify-center items-center text-white/50 gap-10 max-md:flex-wrap max-sm:gap-10 "> */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-center text-white/50 gap-10  max-sm:gap-10 ">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-center text-white/50 gap-10  max-sm:gap-0">
               <div className="box w-full text-white/80">
                 <div className="bg-[url(/lenis.jpg)] bg-cover max-sm:bg-contain bg-left bg-no-repeat w-40 h-12"></div>
 
@@ -117,7 +117,9 @@ function Footer() {
                   </p>
                   <br/>
                   <div className="flex gap-4 items-center max-sm:flex-wrap">
-                    <div><input type="text" placeholder='Enter your e-mail' className='p-2 text-sm text-black' /></div>
+                    <div className='max-w-full' >
+                      <input type="text" placeholder='Enter your e-mail' className='p-2 text-sm text-black max-w-full' />
+                    </div>
                     <button className='px-4 py-1.5 border font-semibold text-white text-sm hover:bg-white/50'>
                       Subscribe
                     </button>
