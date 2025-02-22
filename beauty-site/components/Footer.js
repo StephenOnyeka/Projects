@@ -11,11 +11,11 @@ function Footer() {
       <footer>
         {/* <div className="bg-[#0A0300]"> */}
         <div className="bg-[#69422F]">
-          <div className="pt-16 pb-8 max-w-7xl mx-auto max-lg:px-8">
+          <div className="pt-16 pb-8 max-w-7xl mx-auto max-lg:px-8 max-sm:px-4">
             {/* <div className="flex justify-center items-center text-white/50 gap-10 max-md:flex-wrap max-sm:gap-10 "> */}
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-center text-white/50 gap-10  max-sm:gap-10 ">
               <div className="box w-full text-white/80">
-                <div className="bg-[url(/lenis.jpg)] bg-cover bg-left bg-no-repeat w-40 h-12"></div>
+                <div className="bg-[url(/lenis.jpg)] bg-cover max-sm:bg-contain bg-left bg-no-repeat w-40 h-12"></div>
 
                 <br />
                 <p className="font-medium text-lg max-sm:text-base font-Libre italic">
@@ -70,10 +70,10 @@ function Footer() {
                     Get in Touch
                   </p>
                   <br />
-                  <div className="flex text-white gap-2">
+                  <div className="flex text-white gap-2 max-sm:gap-1">
                     <a
                       href=""
-                      className="border border-white/30 p-2.5 rounded-full  hover:bg-white/50"
+                      className="border border-white/30 p-2.5 max-sm:p-2 rounded-full  hover:bg-white/50"
                     >
                       <FaFacebookF
                         size={15}
@@ -82,7 +82,7 @@ function Footer() {
                     </a>
                     <a
                       href=""
-                      className="border border-white/30 p-2.5 rounded-full  hover:bg-white/50"
+                      className="border border-white/30 p-2.5 max-sm:p-2 rounded-full  hover:bg-white/50"
                     >
                       <FaLinkedin
                         size={15}
@@ -91,7 +91,7 @@ function Footer() {
                     </a>
                     <a
                       href=""
-                      className="border border-white/30 p-2.5 rounded-full  hover:bg-white/50"
+                      className="border border-white/30 p-2.5 max-sm:p-2 rounded-full  hover:bg-white/50"
                     >
                       <FaXTwitter
                         size={15}
@@ -100,7 +100,7 @@ function Footer() {
                     </a>
                     <a
                       href=""
-                      className="border border-white/30 p-2.5 rounded-full  hover:bg-white/50"
+                      className="border border-white/30 p-2.5 max-sm:p-2 rounded-full  hover:bg-white/50"
                     >
                       <FaInstagram
                         size={15}
