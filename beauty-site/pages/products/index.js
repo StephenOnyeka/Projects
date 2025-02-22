@@ -102,7 +102,7 @@ export default function Products({ products }) {
                     <Image
                       alt={product.imageAlt}
                       src={product.imageSrc}
-                      className="aspect-square w-full border rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-[7/8]"
+                      className="aspect-[4/4] w-full border rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-[7/8]"
                       width={250}
                       height={100}
                       overlay="responsive"
