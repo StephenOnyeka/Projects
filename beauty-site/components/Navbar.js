@@ -48,7 +48,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="bg-transparent">
+    <div className="bg-transparent max-lg:bg-white">
       {/* // <div className="bg-white"> */}
       {/* //  <div className="bg"> */}
       {/*  <div className="bg-[#DFC7B4]"> */}

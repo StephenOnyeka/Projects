@@ -8,7 +8,7 @@ function HOme() {
     <div>
       <div>
         {/* <div className="bg-[url('/images/GkSafmo9dVaGFHi4c0IfpI-4096x4096.webp')] bg-cover bg-no-repeat bg-center "> */}
-        <div className="bg-[url('/images/about/aboutbg.jpeg')] bg-cover bg-no-repeat bg-center max ">
+        <div className="bg-[url('/images/about/aboutbg.jpeg')] bg-cover bg-no-repeat bg-center ">
           <div className=" h-screen p-8 max-sm:px-4 w-full grid grid-col items-center max-md:h-full max-md:py-24 max-md:bg-white/20 max-md:pt-52">
             <div className="flex flex-col items-start gap-8 max-md:items-center max-md:text-center">
               <div className="text-5xl md:text-6xl font-[600] font-Libre">

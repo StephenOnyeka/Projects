@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 const Layout = ({children}) => {
     return ( 
         // <div className="content">
-        <div>
+        <div className="overflow-x-hidden" >
             {/* <div className="-mb-24"><Navbar /></div> */}
             <div className=""><Navbar /></div>
             {children}
