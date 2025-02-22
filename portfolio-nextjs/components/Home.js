@@ -239,7 +239,7 @@ function HOme() {
             <div className="flex flex-col gap-4 font-Georgia bname">
               <Link
                 className="shiny-button"
-                href="https://demo-ajci.vercel.app/"
+                href="https://lenis-beryl.vercel.app/"
               >
                 <Image
                   src={"/images/Screenshot 2025-02-19 010607.png"}
@@ -253,13 +253,13 @@ function HOme() {
                 <div className="flex gap-4">
                   <Link
                     className="hover:border hover:rounded-full p-2"
-                    href="https://demo-ajci.vercel.app/"
+                    href="https://lenis-beryl.vercel.app/"
                   >
                     <HiMiniArrowTopRightOnSquare size={20} color={"white"} />
                   </Link>
                   <Link
                     className="hover:border hover:rounded-full p-2"
-                    href="https://github.com/StephenOnyeka/Projects/tree/main/nextjs-shopify-demo"
+                    href="https://github.com/StephenOnyeka/Projects/tree/main/beauty-site"
                   >
                     <RiGithubLine size={20} color={"white"} />
                   </Link>
@@ -267,7 +267,8 @@ function HOme() {
               </div>
               <p className="italic text-lg max-sm:text-md">
                 Lenis is a skin care company to focuses on beauty standard with
-                nature and also Offer skin consultation with dermatologists. Brought to life uisng TailwindCSS and NextJS
+                nature and also Offer skin consultation with dermatologists.
+                Brought to life uisng TailwindCSS and NextJS
               </p>
             </div>
             <div className="flex flex-col gap-4 font-Georgia bname">
