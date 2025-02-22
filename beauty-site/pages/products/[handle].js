@@ -112,14 +112,17 @@ function Handle() {
   if (!product) {
     return <div>Product not found</div>;
   }
-  // Get 4 random related products
-  const relatedProducts = getRandomProducts(staticProducts, product.id, 4);
+  // Get 5 random related products
+  const relatedProducts = getRandomProducts(staticProducts, product.id, 5);
   return (
     // <div className="mt-20">
     <div className="mx-auto lg:max-w-7xl">
       <main className=" pt-4 sm:pt-12 md:pt-20 max-sm:px-4 px-6 mb-4 lg:px-8">
-        <Link href={'/products'}>
-          <IoArrowBackCircleOutline size={40} className="hover:opacity-50 mb-4"/>
+        <Link href={"/products"}>
+          <IoArrowBackCircleOutline
+            size={40}
+            className="hover:opacity-50 mb-4"
+          />
         </Link>
         <div
           key={product.handle}
@@ -213,7 +216,36 @@ function Handle() {
         <p className="mt-24 mb-8 font-semibold text-lg font-Libre">
           Customers also viewed
         </p>{" "}
-        <div className="flex flex-wrap gap-x-4 md:gap-x-4 lg:gap-x-8  gap-y-4 ">
+        <div className="flex flex-wrap max-sm:flex-nowrap gap-x-4 md:gap-x-4 lg:gap-x-8 max-sm:gap-y-4  gap-y-4 overflow-x-scroll scroll-smooth pb-4 hide-scrollbar">
+          {relatedProducts.map((item) => {
+            return (
+              <>
+                <Link
+                  key={item.id}
+                  href={`/products/${item.id}`}
+                  className="group"
+                >
+                  <div className="w-[250px] max-sm:w-[120px]">
+                    <Image
+                      alt={item.imageSrc}
+                      src={item.imageSrc}
+                      className="aspect-[6/6] max-sm:aspect-[4/4] w-full border rounded-lg bg-gray-200 object-cover group-hover:opacity-75"
+                      width={250}
+                      height={100}
+                    />
+                  </div>
+                  {/* <h3 className="mt-4 font-medium text-sm max-sm:text-xs w-[250px] max-sm:w-[100px] text-gray-700">
+                    {item.name}
+                  </h3> */}
+                  <p className="mt-2 text-lg font-medium max-sm:text-sm text-orange-900">
+                    {item.price}
+                  </p>
+                </Link>
+              </>
+            );
+          })}
+        </div>
+        {/* <div className="flex flex-wrap gap-x-4 md:gap-x-4 lg:gap-x-8  gap-y-4 ">
           {relatedProducts.map((item) => {
             return (
               <>
@@ -241,7 +273,7 @@ function Handle() {
               </>
             );
           })}
-        </div>
+        </div> */}
       </main>
     </div>
   );
