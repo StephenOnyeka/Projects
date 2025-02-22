@@ -89,12 +89,12 @@ export default function Products({ products }) {
   return (
     <div>
       {/* <div className="  px-4 lg:px-8 pt-14 max-sm:pt-0"> */}
-      <div className=" mx-auto max-w-2xl lg:max-w-7xl px-4 lg:px-8 pt-0 max-sm:pt-0">
+      <div className=" mx-auto max-w-2xl lg:max-w-7xl px-2 lg:px-8 pt-0 max-sm:pt-0">
         {/* <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"> */}
-        <div className=" px-4 py-14 sm:px-6 sm:py-24  lg:px-8">
+        <div className=" px-2 py-14 sm:px-6 sm:py-24  lg:px-8">
           <h2 className="text-2xl font-semibold font-Libre">All Products</h2>
           <br />
-          <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
             {staticProducts.map((product) => {
               return (
                 <Link key={product.id} href={`/products/${product.id}`}>

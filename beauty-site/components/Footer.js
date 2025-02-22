@@ -13,7 +13,7 @@ function Footer() {
         <div className="bg-[#69422F]">
           <div className="pt-16 pb-8 max-w-7xl mx-auto max-lg:px-8 max-sm:px-4">
             {/* <div className="flex justify-center items-center text-white/50 gap-10 max-md:flex-wrap max-sm:gap-10 "> */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-center text-white/50 gap-10  max-sm:gap-0">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center items-center text-white/50 gap-10  max-sm:gap-8">
               <div className="box w-full text-white/80">
                 <div className="bg-[url(/lenis.jpg)] bg-cover max-sm:bg-contain bg-left bg-no-repeat w-40 h-12"></div>
 
@@ -26,41 +26,46 @@ function Footer() {
                 <p className="text-white text-lg font-semibold">Office</p>
                 <br />
                 <ul className="font-light leading-7 max-sm:leading-7 max-sm:text-xs">
-                  <li>
+                  {/* <li>
                     The USA - <br /> 785 15h Street, Office 478
                   </li>
-                  <li>Boston, MD 02130</li>
-                  {/* <br /> */}
+                  <li>Boston, MD 02130</li> */}
+                  <li>
+                    Nigeria - Lekki street, Office 478
+                  </li>
+                  <li>Lagos State</li>
                   <li className="pt-4 pb-7">
                     <a href="" className="border-b pb-2">
                       info@email.com
                     </a>
-                    {/* <hr /> */}
                   </li>
                   <li className="font-medium text-lg max-sm:text-sm text-white">
-                    {/* +1 323 468 45 70 */}
-                    +234 916 234 26 03
+                    +234 806 371 3505
+                  </li>
+                  <li className="font-medium text-lg max-sm:text-sm text-white">
+                    +234 916 234 2603
                   </li>
                 </ul>
               </div>
+              {/* <br /> */}
               <div className="box w-full text-white/80">
                 <p className="text-white text-lg font-semibold">Links</p>
                 <br />
                 <ul className="font-light leading-9 max-sm:leading-7 max-sm:text-xs">
-                  <li>
-                    <a href="">Home</a>
+                  <li className="hover:text-white hover:font-semibold">
+                    <a href="/">Home</a>
                   </li>
-                  <li>
-                    <a href="">About</a>
+                  <li className="hover:text-white hover:font-semibold">
+                    <a href="about">About</a>
                   </li>
-                  <li>
-                    <a href="">Shop</a>
+                  <li className="hover:text-white hover:font-semibold">
+                    <a href="products">Shop</a>
                   </li>
-                  <li>
-                    <a href="">Book an appointment</a>
+                  <li className="hover:text-white hover:font-semibold">
+                    <a href="#">Book an appointment</a>
                   </li>
-                  <li>
-                    <a href="">Contact</a>
+                  <li className="hover:text-white hover:font-semibold">
+                    <a href="contact">Contact</a>
                   </li>
                 </ul>
               </div>

@@ -28,10 +28,10 @@ function Contact() {
               </p>
               <div className="text-4xl lg:text-5xl xl:text-6xl font-semibold py-4 max-sm:py-2 font-Libre">
                 Have questions? <br />
-                <div className="pt-2">Get in touch!</div>
+                <div className="pt-2 max-sm:pt-0">Get in touch!</div>
               </div></div>
               {/* <p className="text-gray-500 text-md leading-8 "> */}
-              <p className="text-gray-500 text-md leading-8 md:text-lg md:leading-10">
+              <p className="text-gray-500 text-md leading-6 md:text-lg md:leading-10">
                 Adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim.
               </p>

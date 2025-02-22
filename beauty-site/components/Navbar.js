@@ -54,7 +54,7 @@ export default function Navbar() {
       {/*  <div className="bg-[#DFC7B4]"> */}
       <nav
         aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8 "
+        className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8 max-sm:p-2 max-sm:max-sm:px-4  "
       >
         <div className="flex lg:flex-1 ">
           {/* <div className=""> */}
