@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 
 import { useRouter } from "next/router";
@@ -31,9 +32,18 @@ export default function App({ Component, pageProps }) {
   if (loading) {
     return <Loading />;
   }
+    const pageTitle = router.pathname.replace("/", ""); // Removes leading slash
+    const title = `Lenis | ${
+      pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1)
+    }`;
 
   return (
     <Layout>
+      <Head>
+        {/* <link rel="icon" href="/lenis.png" /> */}
+        <link rel="icon" href="/lenisnobg.png" />
+        <title>{pageTitle === "" ? "Lenis" : title}</title>
+      </Head>
       <Component {...pageProps} />
     </Layout>
   );
