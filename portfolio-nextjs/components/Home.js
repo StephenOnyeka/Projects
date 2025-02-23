@@ -231,7 +231,7 @@ function HOme() {
                   </Link>
                 </div>
               </div>
-              <p className="italic text-lg max-sm:text-md">
+              <p className="italic text-lg max-md:text-base max-md:text-left max-md:leading-7">
                 Adoration Paints is a premium painting company. I created this
                 using NextJS, TailwindCSS and Nodejs.
               </p>
@@ -265,10 +265,10 @@ function HOme() {
                   </Link>
                 </div>
               </div>
-              <p className="italic text-lg max-sm:text-md">
-                Lenis is a skin care company to focuses on beauty standard with
+              <p className="italic text-lg max-md:text-base max-md:text-left max-md:leading-7">
+                Lenis is a skin care company that focuses on beauty standard with
                 nature and also Offer skin consultation with dermatologists.
-                Brought to life uisng TailwindCSS and NextJS
+                Brought to life using TailwindCSS and NextJS
               </p>
             </div>
             <div className="flex flex-col gap-4 font-Georgia bname">
@@ -300,7 +300,7 @@ function HOme() {
                   </Link>
                 </div>
               </div>
-              <p className="italic text-lg max-sm:text-md">
+              <p className="italic text-lg max-md:text-base max-md:text-left max-md:leading-7">
                 AJCI Foods is a company that brings foods and snacks to market.
                 Organically raised from farm to table. Built with Nextjs and
                 TailwindCSS.
@@ -338,7 +338,7 @@ function HOme() {
                   </Link>
                 </div>
               </div>
-              <p className="italic text-lg max-sm:text-md">
+              <p className="italic text-lg max-md:text-base max-md:text-left max-md:leading-7">
                 DNK is an e-commerce website I created using ReactJS. I ended up
                 embedding a security dialogue. Implemented json files in stead
                 of API calls.
@@ -374,7 +374,7 @@ function HOme() {
                   </Link>
                 </div>
               </div>
-              <p className="italic text-lg max-sm:text-md">
+              <p className="italic text-lg max-md:text-base max-md:text-left max-md:leading-7">
                 A landing page website I created using html, css and vanilla
                 javascript that mainly focus on use and how colors can be
                 manupulated
@@ -410,7 +410,7 @@ function HOme() {
                   </Link>
                 </div>
               </div>
-              <p className="italic text-lg max-sm:text-md">
+              <p className="italic text-lg max-md:text-base max-md:text-left max-md:leading-7">
                 Kingster is a college page website I built using NextJS and
                 TailwindCSS to prove mastery of the technologies involved.
               </p>
