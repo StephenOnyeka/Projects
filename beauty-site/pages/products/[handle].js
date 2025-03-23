@@ -216,7 +216,8 @@ function Handle() {
         <p className="mt-24 mb-8 font-semibold text-lg font-Libre">
           Customers also viewed
         </p>{" "}
-        <div className="flex flex-wrap max-sm:flex-nowrap gap-x-4 md:gap-x-4 lg:gap-x-8 max-sm:gap-y-4  gap-y-4 overflow-x-scroll scroll-smooth pb-4 hide-scrollbar">
+        {/* <div className="flex flex-wrap max-sm:flex-nowrap gap-x-4 md:gap-x-4 lg:gap-x-8 max-sm:gap-y-4  gap-y-4 overflow-x-scroll scroll-smooth pb-4 hide-scrollbar"> */}
+        <div className="flex flex-nowrap gap-x-4 md:gap-x-4 lg:gap-x-8  gap-y-4 overflow-x-scroll scroll-smooth pb-4 ">
           {relatedProducts.map((item) => {
             return (
               <>
@@ -225,7 +226,8 @@ function Handle() {
                   href={`/products/${item.id}`}
                   className="group"
                 >
-                  <div className="w-[250px] max-sm:w-[120px]">
+                  {/* <div className="w-[200px] max-sm:w-[120px]"> */}
+                  <div className="w-[120px] sm:w-[200px] md:w-[250px]">
                     <Image
                       alt={item.imageSrc}
                       src={item.imageSrc}
