@@ -52,7 +52,7 @@ function Footer() {
                   </li>
                   <li className="font-medium text-lg max-sm:text-sm text-white">
                     {/* +1 800 555 25 69 */}
-                    +234 803 261 75 86 <br/> +234 906 123 10 29
+                    +234 916 234 26 03 <br/> +234 705 493 54 29
                   </li>
                 </ul>
               </div>

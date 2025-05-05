@@ -66,7 +66,7 @@ function Contact() {
                 <span className="flex items-center gap-4">
                   <HiOutlineDevicePhoneMobile className="size-5 text-orange-400" />
                   <p className="text-md lg:text-lg text-black">
-                    +234 803 261 75 86, +234 803 261 75 86
+                    +234 916 234 26 03, +234 705 493 54 29
                   </p>
                 </span>
                 <span className="flex items-center gap-4">
