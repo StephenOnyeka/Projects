@@ -21,11 +21,15 @@ function Navbar() {
 
   return (
     <>
-      <div className="text-white">
+      <div className="text-white font-Georgia">
         <nav className="navbar">
           <ul
-            className="sidebar bg-contingentColor text-white"
-            style={{ display: isOpen ? "flex" : "none" }}
+            // style={{ scrollBehavior: 'smooth' }}
+            className="sidebar bg-[#0b001a] border-y border-l border-purple-400 shadow-2xl text-white"
+            style={{
+              display: isOpen ? "flex" : "none",
+              scrollBehavior: "smooth",
+            }}
           >
             <span className="mt-4 ml-4">
               <li onClick={toggleMenu} className="">
@@ -112,7 +116,7 @@ function Navbar() {
                   href="/"
                   className={` ${
                     pathname === "/"
-                      ? "font-semibold border-primary border-b-2 pb-2.5"
+                      ? "font-semibold border-white border-b-2 pb-2.5"
                       : "border-white border-b-2 border-opacity-0 hover:border-opacity-100 pb-2.5 focus:font-semibold"
                   }`}
                 >
@@ -124,7 +128,7 @@ function Navbar() {
                   href="#Services"
                   className={` ${
                     pathname === "#Services"
-                      ? "font-semibold border-primary border-b-2 pb-2.5"
+                      ? "font-semibold border-white border-b-2 pb-2.5"
                       : "border-white border-b-2 border-opacity-0 hover:border-opacity-100 pb-2.5 focus:font-semibold"
                   }`}
                 >
@@ -145,9 +149,9 @@ function Navbar() {
               </span>
               <span className="hideOnMobile">
                 <Link
-                  href="About"
+                  href="#About"
                   className={` ${
-                    pathname === "About"
+                    pathname === "#About"
                       ? "font-semibold border-primary border-b-2 pb-2.5"
                       : "border-white border-b-2 border-opacity-0 hover:border-opacity-100 pb-2.5 focus:font-semibold"
                   }`}

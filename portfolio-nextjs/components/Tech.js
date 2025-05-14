@@ -9,8 +9,10 @@ function Tech() {
               <li><img src="./images/download.png" style={{borderRadius:"100%"}} alt="" /></li>
               <li><img src="./images/download (1).png" alt="" /></li>
               <li><img src="./images/GitHub-Mark.png" alt="" /></li>
+              <li><img src="./images/banner.png" alt="" /></li>
               <li><img src="./images/React-icon.svg.png" alt="" /></li>
               <li><img src="./images/225996.webp" alt="" /></li>
+              <li><img src="./images/typescript.png" alt="" /></li>
           </ul>
     </div>
   )
