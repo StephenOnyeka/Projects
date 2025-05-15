@@ -276,7 +276,10 @@ export default function ModernFullPreview() {
         </section>
 
         {/* SERVICES SECTION */}
-        <section id="Services" className="w-full flex flex-col items-center justify-center py-20 px-4">
+        <section
+          id="Services"
+          className="w-full flex flex-col items-center justify-center py-20 px-4"
+        >
           <h2
             className="text-3xl font-bold text-white mb-10 tracking-widest font-Georgia"
             data-aos="fade-up"
@@ -732,6 +735,22 @@ export default function ModernFullPreview() {
             {/* <div className="max-w-7xl mx-auto flex justify-between gap-8 border "> */}
             {[
               {
+                title:
+                  "From Junior to Senior: Why Your Front-End Skills Need to Grow Beyond the Framework",
+                summary:
+                  "Know why coffee boosts your code today but sabotages it tomorrow... how to find the sweet spot.",
+                image: "/images/projects/DevImg4.jpg",
+                link: "https://dev.to/don_mizzy/the-caffeine-chronicles-what-happens-when-a-developer-is-always-high-on-coffee-3omm",
+              },
+              {
+                title:
+                  "The Caffeine Chronicles: What Happens When a Developer is Always High on Coffee",
+                summary:
+                  "Know why coffee boosts your code today but sabotages it tomorrow... how to find the sweet spot.",
+                image: "/images/projects/DevImg3.jpg",
+                link: "https://dev.to/don_mizzy/the-caffeine-chronicles-what-happens-when-a-developer-is-always-high-on-coffee-3omm",
+              },
+              {
                 title: "How to fix Nodemon running error",
                 summary:
                   "A step-by-step guide to fixing an error in the terminal if encounter a common problem from nodemon in Node.js",
@@ -756,14 +775,24 @@ export default function ModernFullPreview() {
                   rel="noopener noreferrer"
                   className="w-full flex flex-col items-center"
                 >
-                  <Image
+                  {/* <Image
                     src={blog.image}
                     width={400}
                     height={220}
                     alt={blog.title}
-                    className="rounded-lg border-2 border-purple-400 mb-4 object-cover"
+                    className="rounded-lg border-2 border-purple-400 mb-4 object-cover object-center"
                     loading="lazy"
-                  />
+                  /> */}
+                  {/* <div className="bg-cover bg-center bg-no-repeat w-[400px] h-[220px] rounded-lg border-2 border-purple-400 mb-4"> </div> */}
+                  <div className="relative w-[400px] h-[220px] rounded-lg border-2 border-purple-400 mb-4 overflow-hidden">
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      fill // This makes the image fill the container
+                      className="object-cover object-center" // Like bg-cover + bg-center
+                      loading="lazy"
+                    />
+                  </div>
                   <div className="flex flex-col w-full mt-2">
                     <p
                       className="text-lg font-bold text-white font-Georgia mb-2"
