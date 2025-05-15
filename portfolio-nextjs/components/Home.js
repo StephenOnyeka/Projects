@@ -740,7 +740,7 @@ export default function ModernFullPreview() {
                 summary:
                   "Know why coffee boosts your code today but sabotages it tomorrow... how to find the sweet spot.",
                 image: "/images/projects/DevImg4.jpg",
-                link: "https://dev.to/don_mizzy/the-caffeine-chronicles-what-happens-when-a-developer-is-always-high-on-coffee-3omm",
+                link: "https://dev.to/don_mizzy/from-junior-to-senior-why-your-front-end-skills-need-to-grow-beyond-the-framework-16ng",
               },
               {
                 title:
@@ -770,26 +770,17 @@ export default function ModernFullPreview() {
                 className="flex flex-col items-center bg-white/10 rounded-2xl shadow-lg p-6 transition-transform hover:scale-105 hover:shadow-2xl duration-300"
               >
                 <div
-                  // href={blog.link}
+                  href={blog.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex flex-col items-center"
                 >
-                  {/* <Image
-                    src={blog.image}
-                    width={400}
-                    height={220}
-                    alt={blog.title}
-                    className="rounded-lg border-2 border-purple-400 mb-4 object-cover object-center"
-                    loading="lazy"
-                  /> */}
-                  {/* <div className="bg-cover bg-center bg-no-repeat w-[400px] h-[220px] rounded-lg border-2 border-purple-400 mb-4"> </div> */}
-                  <div className="relative w-[400px] h-[220px] rounded-lg border-2 border-purple-400 mb-4 overflow-hidden">
+                  <div className="relative w-[98%] h-[220px] rounded-lg border-2 border-purple-400 mb-4 overflow-hidden">
                     <Image
                       src={blog.image}
                       alt={blog.title}
-                      fill // This makes the image fill the container
-                      className="object-cover object-center" // Like bg-cover + bg-center
+                      fill 
+                      className="object-cover object-center"
                       loading="lazy"
                     />
                   </div>
