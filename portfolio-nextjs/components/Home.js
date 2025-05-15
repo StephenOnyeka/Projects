@@ -769,7 +769,7 @@ export default function ModernFullPreview() {
                 key={idx}
                 className="flex flex-col items-center bg-white/10 rounded-2xl shadow-lg p-6 transition-transform hover:scale-105 hover:shadow-2xl duration-300"
               >
-                <div
+                <a
                   href={blog.link}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -807,7 +807,7 @@ export default function ModernFullPreview() {
                       Read More
                     </a>
                   </div>
-                </div>
+                </a>
               </div>
             ))}
           </div>
