@@ -738,7 +738,7 @@ export default function ModernFullPreview() {
                 title:
                   "From Junior to Senior: Why Your Front-End Skills Need to Grow Beyond the Framework",
                 summary:
-                  "Know why coffee boosts your code today but sabotages it tomorrow... how to find the sweet spot.",
+                  "Modern front-end devs need back-end awareness to thrive. Lessons from my journey + actionable tips..",
                 image: "/images/projects/DevImg4.jpg",
                 link: "https://dev.to/don_mizzy/from-junior-to-senior-why-your-front-end-skills-need-to-grow-beyond-the-framework-16ng",
               },
@@ -779,7 +779,7 @@ export default function ModernFullPreview() {
                     <Image
                       src={blog.image}
                       alt={blog.title}
-                      fill 
+                      fill
                       className="object-cover object-center"
                       loading="lazy"
                     />
