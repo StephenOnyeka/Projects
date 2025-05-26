@@ -744,12 +744,7 @@ export default function ModernFullPreview() {
                 key={idx}
                 className="flex flex-col items-center bg-white/10 rounded-2xl shadow-lg p-6 transition-transform hover:scale-105 hover:shadow-2xl duration-300"
               >
-                <div
-                  // href={blog.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex flex-col items-center"
-                >
+                <div className="w-full flex flex-col items-center">
                   <Image
                     src={blog.image}
                     width={400}
@@ -773,10 +768,12 @@ export default function ModernFullPreview() {
                       {blog.summary}
                     </p>
                     <a
+                      href={blog.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="shiny-button px-6 py-2 font-Georgia text-white bg-purple-700 hover:bg-purple-900 rounded-xl transition-colors duration-200 text-center"
                       data-aos="zoom-in"
                       data-aos-delay="200"
-                      href={blog.link}
                     >
                       Read More
                     </a>
