@@ -45,22 +45,22 @@ function HeroAnimatedCard() {
       data-aos="fade-up"
     >
       <h1
-        className="text-5xl md:text-7xl text-center font-bold text-white mb-2 font-Georgia "
+        className="text-5xl md:text-7xl text-center font-semibold text-white mb-2 font-Inter "
         data-aos="fade-up"
         data-aos-delay="0"
       >
         {/* Hi, I'm <span className="name">Stephen Onyeka</span> */}
-        My name is <span className="name italic">Stephen Onyeka</span>
+        My name is <span className="name normal">Stephen Onyeka</span>
       </h1>
       <p
-        className="text-xl md:text-2xl text-purple-200 font-Georgia tracking-widest mb-2"
+        className="text-xl md:text-2xl text-purple-200 font-Inter tracking-widest mb-2"
         data-aos="fade-up"
         data-aos-delay="100"
       >
         Building impactful digital experiences.
       </p>
       <p
-        className="text-2xl md:text-3xl text-purple-100 font-Georgia italic mb-4 text-center"
+        className="text-2xl md:text-3xl text-purple-100 font-Inter normal mb-4 text-center"
         data-aos="fade-up"
         data-aos-delay="200"
       >
@@ -71,7 +71,7 @@ function HeroAnimatedCard() {
       </p>
       <div className="flex gap-6 items-center justify-center mt-2">
         <Link href="#Portfolio">
-          <button className="shiny-button text-white border-2 px-8 py-2 font-Georgia italic tracking-[4px] text-2xl md:text-4xl focus:bg-white focus:text-[#0b001a] shadow-lg hover:scale-105 transition-transform duration-200">
+          <button className="shiny-button text-white border-2 px-8 py-2 font-Inter normal tracking-[4px] text-2xl md:text-4xl focus:bg-white focus:text-[#0b001a] shadow-lg hover:scale-105 transition-transform duration-200">
             Explore
           </button>
         </Link>
@@ -281,12 +281,12 @@ export default function ModernFullPreview() {
           className="h-auto flex flex-col justify-center max-lg:px-4 py-20"
         >
           <h1
-            className="text-white tracking-widest text-3xl font-bold text-center py-20 font-Georgia"
+            className="text-white tracking-widest text-3xl font-semibold text-center py-20 font-Inter"
             data-aos="fade-up"
           >
             About <span className="name">Me</span>
           </h1>
-          {/* <h2 className="text-3xl font-bold text-white mb-10 tracking-widest font-Georgia">About <span className="text-purple-500">Me</span></h2> */}
+          {/* <h2 className="text-3xl font-semibold text-white mb-10 tracking-widest font-Inter">About <span className="text-purple-500">Me</span></h2> */}
           <div className="max-w-7xl mx-auto" data-aos="fade-left">
             <div className="flex max-sm:flex-wrap items-center justify-between gap-10 p-2">
               <div className="w-full sm:w-1/2 flex items-center justify-center">
@@ -294,7 +294,7 @@ export default function ModernFullPreview() {
                   <div className="bg-[url('/images/Me.jpg')] bg-top bg-no-repeat bg-cover aspect-[3/4] bottom-[5%] left-[7%] relative"></div>
                 </div>
               </div>
-              <div className="w-full md:w-1/2 font-Georgia">
+              <div className="w-full md:w-1/2 font-Inter">
                 <div className="w-full">
                   <p className="text-white text-lg max-sm:text-[1rem] font-Montserrat">
                     I'm a software developer with a proven track record of
@@ -312,7 +312,7 @@ export default function ModernFullPreview() {
                     clients to deliver exceptional results.
                     <br />
                     <br />
-                    <span className="text-md font-semibold font-Georgia">
+                    <span className="text-md font-medium font-Inter">
                       Stephen Onyeka.
                     </span>
                   </p>
@@ -325,7 +325,7 @@ export default function ModernFullPreview() {
         {/* SERVICES SECTION */}
         <section className="w-full flex flex-col items-center justify-center py-20 px-4">
           <h2
-            className="text-3xl font-bold text-white mb-10 tracking-widest font-Georgia"
+            className="text-3xl font-semibold text-white mb-10 tracking-widest font-Inter"
             data-aos="fade-up"
           >
             My <span className="text-purple-500">Services</span>
@@ -344,14 +344,14 @@ export default function ModernFullPreview() {
                 <HiMiniArrowTopRightOnSquare className="text-3xl text-white" />
               </div>
               <h3
-                className="font-semibold text-lg tracking-widest font-Georgia"
+                className="font-medium text-lg tracking-widest font-Inter"
                 data-aos="fade-right"
                 data-aos-delay="200"
               >
                 Web Maintenance
               </h3>
               <p
-                className="text-gray-300 text-sm font-Georgia italic"
+                className="text-gray-300 text-sm font-Inter normal"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -370,16 +370,16 @@ export default function ModernFullPreview() {
               >
                 <HiMiniArrowTopRightOnSquare className="text-3xl text-white" />
               </div>
-              {/* <h3 className="font-semibold text-lg tracking-widest font-Georgia" data-aos="fade-right" data-aos-delay="300">UI/UX Design</h3> */}
+              {/* <h3 className="font-medium text-lg tracking-widest font-Inter" data-aos="fade-right" data-aos-delay="300">UI/UX Design</h3> */}
               <h3
-                className="font-semibold text-lg tracking-widest font-Georgia"
+                className="font-medium text-lg tracking-widest font-Inter"
                 data-aos="fade-right"
                 data-aos-delay="300"
               >
                 Mobile Dev
               </h3>
               <p
-                className="text-gray-300 text-sm font-Georgia italic"
+                className="text-gray-300 text-sm font-Inter normal"
                 data-aos="fade-up"
                 data-aos-delay="400"
               >
@@ -401,14 +401,14 @@ export default function ModernFullPreview() {
                 <HiMiniArrowTopRightOnSquare className="text-3xl text-white" />
               </div>
               <h3
-                className="font-semibold text-lg tracking-widest font-Georgia"
+                className="font-medium text-lg tracking-widest font-Inter"
                 data-aos="fade-right"
                 data-aos-delay="400"
               >
                 Fullstack Development
               </h3>
               <p
-                className="text-gray-300 text-sm font-Georgia italic"
+                className="text-gray-300 text-sm font-Inter normal"
                 data-aos="fade-up"
                 data-aos-delay="500"
               >
@@ -426,7 +426,7 @@ export default function ModernFullPreview() {
           data-aos="fade-up"
         >
           <h2
-            className="text-3xl font-bold text-white mb-10 tracking-widest font-Georgia"
+            className="text-3xl font-semibold text-white mb-10 tracking-widest font-Inter"
             data-aos="fade-up"
           >
             Technologies <span className="text-purple-500">I Use</span>
@@ -440,7 +440,7 @@ export default function ModernFullPreview() {
               data-aos-delay="0"
             >
               <FaHtml5 size={56} color="#e34c26" className="drop-shadow-lg" />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">HTML5</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">HTML5</span> */}
             </div>
             {/* CSS3 */}
             <div
@@ -449,7 +449,7 @@ export default function ModernFullPreview() {
               data-aos-delay="100"
             >
               <FaCss3Alt size={56} color="#1572b6" className="drop-shadow-lg" />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">CSS3</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">CSS3</span> */}
             </div>
             {/* JavaScript */}
             <div
@@ -458,7 +458,7 @@ export default function ModernFullPreview() {
               data-aos-delay="200"
             >
               <FaJs size={56} color="#f7df1e" className="drop-shadow-lg" />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">JavaScript</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">JavaScript</span> */}
             </div>
             {/* GitHub */}
             <div
@@ -471,7 +471,7 @@ export default function ModernFullPreview() {
                 color="#fff"
                 className="drop-shadow-lg bg-black rounded-full p-2"
               />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">GitHub</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">GitHub</span> */}
             </div>
             {/* Tailwind CSS */}
             <div
@@ -484,7 +484,7 @@ export default function ModernFullPreview() {
                 color="#38bdf8"
                 className="drop-shadow-lg"
               />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">Tailwind CSS</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">Tailwind CSS</span> */}
             </div>
             {/* Next.js */}
             <div
@@ -497,7 +497,7 @@ export default function ModernFullPreview() {
                 color="#000000"
                 className="drop-shadow-lg bg-white rounded-full p-2"
               />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">Next.js</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">Next.js</span> */}
             </div>
             {/* MongoDB */}
             <div
@@ -506,7 +506,7 @@ export default function ModernFullPreview() {
               data-aos-delay="600"
             >
               <SiMongodb size={56} color="#3c873a" className="drop-shadow-lg" />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">MongoDB</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">MongoDB</span> */}
             </div>
 
             {/* React */}
@@ -516,7 +516,7 @@ export default function ModernFullPreview() {
               data-aos-delay="700"
             >
               <FaReact size={56} color="#61dafb" className="drop-shadow-lg" />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">React</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">React</span> */}
             </div>
             {/* Node.js */}
             <div
@@ -525,7 +525,7 @@ export default function ModernFullPreview() {
               data-aos-delay="800"
             >
               <FaNodeJs size={56} color="#3c873a" className="drop-shadow-lg" />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">Node.js</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">Node.js</span> */}
             </div>
             {/* TypeScript */}
             <div
@@ -538,7 +538,7 @@ export default function ModernFullPreview() {
                 color="#3178c6"
                 className="drop-shadow-lg"
               />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">TypeScript</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">TypeScript</span> */}
             </div>
             {/* Git */}
             <div
@@ -547,7 +547,7 @@ export default function ModernFullPreview() {
               data-aos-delay="1000"
             >
               <SiGit size={56} color="#f05032" className="drop-shadow-lg" />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">Git</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">Git</span> */}
             </div>
             {/* Figma */}
             <div
@@ -560,7 +560,7 @@ export default function ModernFullPreview() {
                 alt="Figma"
                 className="w-14 h-14 drop-shadow-lg rounded-md object-contain"
               />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">Figma</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">Figma</span> */}
             </div>
             {/* Expo */}
             <div
@@ -573,7 +573,7 @@ export default function ModernFullPreview() {
                 alt="Expo"
                 className="w-14 h-14 drop-shadow-lg rounded-md object-contain"
               />
-              {/* <span className="text-white text-xs mt-2 font-Georgia">Expo</span> */}
+              {/* <span className="text-white text-xs mt-2 font-Inter">Expo</span> */}
             </div>
           </div>
         </section>
@@ -585,7 +585,7 @@ export default function ModernFullPreview() {
           data-aos="fade-up"
         >
           <h2
-            className="text-3xl font-bold text-white mb-10 tracking-widest font-Georgia"
+            className="text-3xl font-semibold text-white mb-10 tracking-widest font-Inter"
             data-aos="fade-up"
           >
             Recent <span className="text-purple-500">Projects</span>
@@ -593,7 +593,7 @@ export default function ModernFullPreview() {
           {/* Filter Tabs */}
           <div className="flex gap-4 mb-8" data-aos="fade-up">
             <button
-              className={`px-6 py-2 rounded-full font-Georgia text-white bg-purple-700/80 hover:bg-purple-900 transition-colors ${
+              className={`px-6 py-2 rounded-full font-Inter text-white bg-purple-700/80 hover:bg-purple-900 transition-colors ${
                 projectFilter === "web" ? "ring-2 ring-purple-400" : ""
               }`}
               onClick={() => setProjectFilter("web")}
@@ -602,7 +602,7 @@ export default function ModernFullPreview() {
               Web
             </button>
             <button
-              className={`px-6 py-2 rounded-full font-Georgia text-white bg-purple-700/80 hover:bg-purple-900 transition-colors ${
+              className={`px-6 py-2 rounded-full font-Inter text-white bg-purple-700/80 hover:bg-purple-900 transition-colors ${
                 projectFilter === "mobile" ? "ring-2 ring-purple-400" : ""
               }`}
               onClick={() => setProjectFilter("mobile")}
@@ -611,7 +611,7 @@ export default function ModernFullPreview() {
               Mobile
             </button>
             <button
-              className={`px-6 py-2 rounded-full font-Georgia text-white bg-purple-700/80 hover:bg-purple-900 transition-colors ${
+              className={`px-6 py-2 rounded-full font-Inter text-white bg-purple-700/80 hover:bg-purple-900 transition-colors ${
                 projectFilter === "all" ? "ring-2 ring-purple-400" : ""
               }`}
               onClick={() => setProjectFilter("all")}
@@ -640,7 +640,7 @@ export default function ModernFullPreview() {
                   loading="lazy"
                 />
                 <div className="flex justify-between items-center w-full mt-2">
-                  <p className="text-lg font-bold text-white font-Georgia">
+                  <p className="text-lg font-semibold text-white font-Inter">
                     {project.name}
                   </p>
                   <div className="flex gap-2">
@@ -664,8 +664,8 @@ export default function ModernFullPreview() {
                       key={idx}
                       className={
                         tech === "React Native" || tech === "React"
-                          ? "bg-indigo-800 text-white px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
-                          : "bg-purple-700 text-white px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
+                          ? "bg-indigo-800 text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
+                          : "bg-purple-700 text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
                       }
                     >
                       {tech}
@@ -678,31 +678,31 @@ export default function ModernFullPreview() {
                       key={idx}
                       className={
                         tech === "React Native" || tech === "React"
-                          ? "bg-indigo-800 text-white px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
+                          ? "bg-indigo-800 text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
                           : tech === "Next.js"
-                          ? "bg-black/80 text-white px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
+                          ? "bg-black/80 text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
                           : tech === "Node.js"
-                          ? "bg-[#3c873a] text-white px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
+                          ? "bg-[#3c873a] text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
                           : tech === "JSON"
-                          ? "bg-[#f7df1e] text-black px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
+                          ? "bg-[#f7df1e] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
                           : tech === "Javascript"
-                          ? "bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
+                          ? "bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
                           : tech === "HTML"
-                          ? "bg-[#e34c26] text-black px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
+                          ? "bg-[#e34c26] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
                           : tech === "CSS"
-                          ? "bg-[#1572b6] text-black px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
+                          ? "bg-[#1572b6] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
                           : tech === "Tailwind"
-                          ? "bg-[#38bdf8] text-black px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
+                          ? "bg-[#38bdf8] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
                           : tech === "Expo"
-                          ? "bg-[#000020] text-white px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
-                          : "bg-purple-700 text-white px-3 py-1 rounded-full text-xs font-semibold font-Georgia"
+                          ? "bg-[#000020] text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
+                          : "bg-purple-700 text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
                       }
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <p className="italic text-sm text-gray-300 mt-2 font-Georgia">
+                <p className="normal text-sm text-gray-300 mt-2 font-Inter">
                   {project.desc}
                 </p>
               </div>
@@ -717,7 +717,7 @@ export default function ModernFullPreview() {
           data-aos="fade-up"
         >
           <h2
-            className="text-3xl font-bold text-white mb-10 tracking-widest font-Georgia"
+            className="text-3xl font-semibold text-white mb-10 tracking-widest font-Inter"
             data-aos="fade-up"
           >
             Latest <span className="text-purple-500">Blogs</span>
@@ -755,13 +755,13 @@ export default function ModernFullPreview() {
                   />
                   <div className="flex flex-col w-full mt-2">
                     <p
-                      className="text-lg font-bold text-white font-Georgia mb-2"
+                      className="text-lg font-semibold text-white font-Inter mb-2"
                       data-aos="fade-up"
                     >
                       {blog.title}
                     </p>
                     <p
-                      className="text-gray-300 text-sm font-Georgia mb-4 italic"
+                      className="text-gray-300 text-sm font-Inter mb-4 normal"
                       data-aos="fade-up"
                       data-aos-delay="100"
                     >
@@ -771,7 +771,7 @@ export default function ModernFullPreview() {
                       href={blog.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="shiny-button px-6 py-2 font-Georgia text-white bg-purple-700 hover:bg-purple-900 rounded-xl transition-colors duration-200 text-center"
+                      className="shiny-button px-6 py-2 font-Inter text-white bg-purple-700 hover:bg-purple-900 rounded-xl transition-colors duration-200 text-center"
                       data-aos="zoom-in"
                       data-aos-delay="200"
                     >
@@ -794,7 +794,7 @@ export default function ModernFullPreview() {
             data-aos="fade-up"
           >
             <h2
-              className="text-3xl md:text-4xl font-bold tracking-widest mb-4 text-white font-Georgia"
+              className="text-3xl md:text-4xl font-semibold tracking-widest mb-4 text-white font-Inter"
               data-aos="fade-up"
               data-aos-delay="100"
             >
@@ -814,7 +814,7 @@ export default function ModernFullPreview() {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-white font-semibold mb-2 font-Georgia"
+                  className="block text-white font-medium mb-2 font-Inter"
                   data-aos="fade-up"
                 >
                   Name
@@ -823,7 +823,7 @@ export default function ModernFullPreview() {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 font-Georgia"
+                  className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 font-Inter"
                   placeholder="Your Name"
                   required
                   value={formData.name}
@@ -835,7 +835,7 @@ export default function ModernFullPreview() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-white font-semibold mb-2 font-Georgia"
+                  className="block text-white font-medium mb-2 font-Inter"
                   data-aos="fade-up"
                   data-aos-delay="100"
                 >
@@ -845,7 +845,7 @@ export default function ModernFullPreview() {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 font-Georgia"
+                  className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 font-Inter"
                   placeholder="you@email.com"
                   required
                   value={formData.email}
@@ -857,7 +857,7 @@ export default function ModernFullPreview() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-white font-semibold mb-2 font-Georgia"
+                  className="block text-white font-medium mb-2 font-Inter"
                   data-aos="fade-up"
                   data-aos-delay="200"
                 >
@@ -867,7 +867,7 @@ export default function ModernFullPreview() {
                   id="message"
                   name="message"
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 font-Georgia"
+                  className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 font-Inter"
                   placeholder="Type your message here..."
                   required
                   value={formData.message}
@@ -878,7 +878,7 @@ export default function ModernFullPreview() {
               </div>
               {formStatus && (
                 <div
-                  className={`text-center text-sm font-semibold mt-2 ${
+                  className={`text-center text-sm font-medium mt-2 ${
                     formStatus.success ? "text-green-400" : "text-red-400"
                   }`}
                 >
@@ -887,7 +887,7 @@ export default function ModernFullPreview() {
               )}
               {/* <button
                 type="submit"
-                className="mt-4 shiny-button border-2 border-purple-700 text-white text-center font-bold px-8 py-3 rounded-xl bg-purple-700 hover:bg-purple-900 transition-colors duration-200 font-Georgia text-xl tracking-widest shadow-lg w-full flex justify-center"
+                className="mt-4 shiny-button border-2 border-purple-700 text-white text-center font-semibold px-8 py-3 rounded-xl bg-purple-700 hover:bg-purple-900 transition-colors duration-200 font-Inter text-xl tracking-widest shadow-lg w-full flex justify-center"
                 data-aos="zoom-in"
                 data-aos-delay="100"
               >
@@ -895,7 +895,7 @@ export default function ModernFullPreview() {
               </button> */}
               <button
                 type="submit"
-                className="mt-4 shiny-button text-white text-center font px-8 py-3 font-bold rounded-xl bg-purple-700 hover:bg-purple-900 transition-colors duration-100 font-Georgia text-xl tracking-widest shadow-lg w-full flex justify-center"
+                className="mt-4 shiny-button text-white text-center font px-8 py-3 font-semibold rounded-xl bg-purple-700 hover:bg-purple-900 transition-colors duration-100 font-Inter text-xl tracking-widest shadow-lg w-full flex justify-center"
                 data-aos="zoom-in"
                 data-aos-delay="100"
               >

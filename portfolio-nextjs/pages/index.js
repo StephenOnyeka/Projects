@@ -8,7 +8,8 @@ export default function Home() {
     <div>
       {/* <Navbar />  */}
       {/* <HOme /> */}
-      <ModernFullPreview />
+      {/* <ModernFullPreview /> */}
+      <PreviewModernSection />
     </div>
   );
 }

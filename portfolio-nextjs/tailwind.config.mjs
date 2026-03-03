@@ -8,9 +8,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Georgian: ["Noto Serif Georgian", "serif"],
+        // Georgian: ["Noto Serif Georgian", "serif"],
+        Inter: ["Inter", "sans-serif"],
         Playfair: ["Playfair", "serif"],
-        Georgia: ["Georgia", "serif"],
+        // Georgia: ["Georgia", "serif"],
       },
       colors: {
         background: "var(--background)",

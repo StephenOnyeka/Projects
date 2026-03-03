@@ -60,7 +60,7 @@ const ScrollDiv = () => {
               href="/"
               className={`text-white ${
                 pathname === "/"
-                  ? "font-semibold border-primary border-b-2 text-xl bg-white/10"
+                  ? "font-medium border-primary border-b-2 text-xl bg-white/10"
                   : "hover:bg-white/10 hover:text-xl "
               }`}
             >
@@ -72,7 +72,7 @@ const ScrollDiv = () => {
               href="#Services"
               className={`text-white ${
                 pathname === "#Services"
-                  ? "font-semibold border-primary border-b-2 text-xl bg-white/10"
+                  ? "font-medium border-primary border-b-2 text-xl bg-white/10"
                   : "hover:bg-white/10 hover:text-xl "
               }`}
             >
@@ -84,7 +84,7 @@ const ScrollDiv = () => {
               href="#Portfolio"
               className={`text-white ${
                 pathname === "#Portfolio"
-                  ? "font-semibold border-primary border-b-2 text-xl bg-white/10"
+                  ? "font-medium border-primary border-b-2 text-xl bg-white/10"
                   : "hover:bg-white/10 hover:text-xl "
               }`}
             >
@@ -96,7 +96,7 @@ const ScrollDiv = () => {
               href="#About"
               className={`text-white ${
                 pathname === "#About"
-                  ? "font-semibold border-primary border-b-2 text-xl bg-white/10"
+                  ? "font-medium border-primary border-b-2 text-xl bg-white/10"
                   : "hover:bg-white/10 hover:text-xl "
               }`}
             >
@@ -108,7 +108,7 @@ const ScrollDiv = () => {
               href="#Contact"
               className={`text-white ${
                 pathname === "#Contact"
-                  ? "font-semibold border-primary border-b-2 text-xl bg-white/10"
+                  ? "font-medium border-primary border-b-2 text-xl bg-white/10"
                   : "hover:bg-white/10 hover:text-xl "
               }`}
             >

@@ -17,7 +17,7 @@ function Footer() {
             </p>
           </div>
           <div className="w-full flex items-center gap-4 justify-end">
-            <p className="text-white text-lg font-semibold">Get in Touch</p>
+            <p className="text-white text-lg font-medium">Get in Touch</p>
             <div className="flex text-white gap-2">
               <Link
                 href="https://wa.me/09162342603"

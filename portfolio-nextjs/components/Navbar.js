@@ -1,199 +1,59 @@
-import React,{useState} from "react";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import Image from "next/image";
-import { IoIosNotifications } from "react-icons/io";
-
-import { usePathname } from "next/navigation";  
+import React, { useState } from 'react'
 
 function Navbar() {
-  const pathname = usePathname()
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const [dropOpen, setDropOpen] = useState(false);
-  const toggleDropOpen = () => {
-    setDropOpen(!dropOpen);
-  }
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const navItems = ['ABOUT ME', 'EXPERIENCE', 'PROJECTS', 'CONTACT']
 
   return (
-    <>
-      <div className="text-white font-Georgia">
-        <nav className="navbar">
-          <ul
-            // style={{ scrollBehavior: 'smooth' }}
-            className="sidebar bg-[#0b001a] border-y border-l border-purple-400 shadow-2xl text-white"
-            style={{
-              display: isOpen ? "flex" : "none",
-              scrollBehavior: "smooth",
-            }}
-          >
-            <span className="mt-4 ml-4">
-              <li onClick={toggleMenu} className="">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  // height="26"
-                  viewBox="0 96 960 960"
-                  width="40"
-                  fill="#ffffff"
-                  // className="mt-8"
-                >
-                  <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z" />
-                </svg>
-              </li>
-            </span>
-            <li>
-              <Link
-                href="#Home"
-                className={`text-white ${
-                  pathname === "/"
-                    ? "font-semibold border-primary border-b-2 text-xl bg-white/10"
-                    : "hover:bg-white/10 hover:text-xl "
-                }`}
-              >
-                Home
-              </Link>{" "}
-            </li>
-            <li>
-              <Link
-                href="#Services"
-                className={`text-white ${
-                  pathname === "#Services"
-                    ? "font-semibold border-primary border-b-2 text-xl bg-white/10"
-                    : "hover:bg-white/10 hover:text-xl "
-                }`}
-              >
-                Services
-              </Link>{" "}
-            </li>
-            <li>
-              <Link
-                href="#Portfolio"
-                className={`text-white ${
-                  pathname === "#Portfolio"
-                    ? "font-semibold border-primary border-b-2 text-xl bg-white/10"
-                    : "hover:bg-white/10 hover:text-xl "
-                }`}
-              >
-                Portfolio
-              </Link>{" "}
-            </li>
-            <li>
-              <Link
-                href="#About"
-                className={`text-white ${
-                  pathname === "#About"
-                    ? "font-semibold border-primary border-b-2 text-xl bg-white/10"
-                    : "hover:bg-white/10 hover:text-xl "
-                }`}
-              >
-                About
-              </Link>{" "}
-            </li>
-            <li>
-              <Link
-                href="#Contact"
-                className={`text-white ${
-                  pathname === "#Contact"
-                    ? "font-semibold border-primary border-b-2 text-xl bg-white/10"
-                    : "hover:bg-white/10 hover:text-xl "
-                }`}
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </nav>
+    <header className="relative z-50 flex justify-between items-center px-6 md:px-12 py-8 md:py-10 text-[10px] md:text-[11px] tracking-[0.2em] md:tracking-[0.25em] font-medium uppercase">
+      <div className="hover:opacity-70 cursor-pointer transition-opacity z-50 text-white">STEPHEN ONYEKA</div>
+      
+      {/* Desktop Nav */}
+      <nav className="hidden md:flex gap-6">
+        {navItems.map((item) => (
+          <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:opacity-70 transition-opacity text-white">
+            {item}
+          </a>
+        ))}
+      </nav>
 
-        <div className="">
-          <div className=" flex justify-center justify-items-center items-center max-lg:justify-end">
-            <div className="flex space-x-5 gap-4 items-center justify-center">
-              <span className="hideOnMobile">
-                <Link
-                  href="/"
-                  className={` ${
-                    pathname === "/"
-                      ? "font-semibold border-white border-b-2 pb-2.5"
-                      : "border-white border-b-2 border-opacity-0 hover:border-opacity-100 pb-2.5 focus:font-semibold"
-                  }`}
+      {/* Mobile Menu Icon */}
+      <button 
+        className="md:hidden z-50 flex flex-col gap-1.5 p-2 focus:outline-none"
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label="Toggle Menu"
+      >
+        <div className={`w-6 h-0.5 bg-white transition-all duration-300 origin-center ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
+        <div className={`w-6 h-0.5 bg-white transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></div>
+        <div className={`w-6 h-0.5 bg-white transition-all duration-300 origin-center ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
+      </button>
+
+      {/* Mobile Fullscreen Nav Overlay */}
+      <div className={`fixed inset-0 bg-black z-40 transition-transform duration-500 ease-in-out flex flex-col px-10 py-24 ${isMenuOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+         <div className="flex flex-col gap-4 items-start">
+            {navItems.map((item) => (
+                <a 
+                    key={item} 
+                    href={`#${item.toLowerCase().replace(' ', '-')}`} 
+                    className="text-6xl font-semibold tracking-tight leading-tight hover:opacity-70 transition-opacity capitalize text-white"
+                    onClick={() => setIsMenuOpen(false)}
                 >
-                  Home
-                </Link>{" "}
-              </span>
-              <span className="hideOnMobile">
-                <Link
-                  href="#Services"
-                  className={` ${
-                    pathname === "#Services"
-                      ? "font-semibold border-white border-b-2 pb-2.5"
-                      : "border-white border-b-2 border-opacity-0 hover:border-opacity-100 pb-2.5 focus:font-semibold"
-                  }`}
-                >
-                  Services
-                </Link>{" "}
-              </span>
-              <span className="hideOnMobile">
-                <Link
-                  href="#Portfolio"
-                  className={` ${
-                    pathname === "#Portfolio"
-                      ? "font-semibold border-primary border-b-2 pb-2.5"
-                      : "border-white border-b-2 border-opacity-0 hover:border-opacity-100 pb-2.5 focus:font-semibold"
-                  }`}
-                >
-                  Portfolio
-                </Link>{" "}
-              </span>
-              <span className="hideOnMobile">
-                <Link
-                  href="#About"
-                  className={` ${
-                    pathname === "#About"
-                      ? "font-semibold border-primary border-b-2 pb-2.5"
-                      : "border-white border-b-2 border-opacity-0 hover:border-opacity-100 pb-2.5 focus:font-semibold"
-                  }`}
-                >
-                  About
-                </Link>{" "}
-              </span>
-              <span className="hideOnMobile">
-                <Link
-                  href="#Contact"
-                  className={` ${
-                    pathname === "#Contact"
-                      ? "font-semibold border-primary border-b-2 pb-2.5"
-                      : "border-white border-b-2 border-opacity-0 hover:border-opacity-100 pb-2.5 focus:font-semibold"
-                  }`}
-                >
-                  Contact
-                </Link>
-              </span>
-              {/* The toggle for mobile */}
-              <span
-                className="menu-button"
-                onClick={toggleMenu}
-                style={{ display: isOpen ? "none" : "flex" }}
-              >
-                <i className="lg:hidden">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 96 960 960"
-                    fill="#ffffff"
-                    className="max-lg:w-10 text-white "
-                  >
-                    <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z" />
-                  </svg>
-                </i>
-              </span>
+                    {item.toLowerCase().replace('about me', 'About me')}
+                </a>
+            ))}
+         </div>
+
+         {/* Mobile Menu Footer Info */}
+         <div className="mt-auto space-y-6 text-white">
+            <p className="text-[10px] tracking-[0.25em] uppercase opacity-40 font-medium text-white">BASED IN LAGOS, NIGERIA.</p>
+            <div className="space-y-1">
+                <p className="text-[14px] tracking-[0.1em] uppercase font-bold opacity-90 text-white">SOFTWARE DEVELOPER - DESIGN SYSTEMS & AI</p>
+                <p className="text-[14px] tracking-[0.1em] uppercase font-bold opacity-90 text-white">SPECIALIST</p>
             </div>
-          </div>
-        </div>
+         </div>
       </div>
-    </>
-  );
+    </header>
+  )
 }
 
-export default Navbar;
+export default Navbar
