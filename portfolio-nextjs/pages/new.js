@@ -4,6 +4,9 @@ import React from 'react'
 import About, { Blogs, Experience, Projects } from '@/components/About'
 import History from '@/components/History'
 import Portfolio from '@/components/Portfolio'
+import Journal from '@/components/Journal'
+
+import Contribution from '@/components/Contribution'
 
 function New() {
   return (
@@ -82,7 +85,6 @@ function New() {
       </section>
       <section className="bg-black h-full py-20 px-8 md:px-20">
         <div className=''>  
-          {/* <span className='w-[20px] h-[1px] bg-blue-400'>  </span>           */}
             <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal"> {'-'} PROJECTS</p>
             <br/>
         </div>
@@ -91,16 +93,22 @@ function New() {
         
       </section>
       <section className="bg-black h-full py-20 px-8 md:px-20">
-        <div className=''>  
-          {/* <span className='w-[20px] h-[1px] bg-blue-400'>  </span>           */}
-            {/* <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal"> {'-'} PROJECTS</p> */}
+        <div className=''> 
             <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal"> {'-'} BLOGS</p>
-            {/* <p className="text-4xl">Beyond the Code,  </p> */}
-            {/* <Blogs /> */}
+
             <br/>
         </div>
           <Blogs />
-          {/* <Portfolio /> */}
+          <Journal />
+        
+      </section>
+      <section className="bg-black h-full py-20 px-8 md:px-20">
+        <div className=''> 
+            <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal"> {'-'} CONTRIBUTION</p>
+
+            <br/>
+        </div>
+          <Contribution />
         
       </section>
     </>
