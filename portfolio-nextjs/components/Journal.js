@@ -79,12 +79,12 @@ function Journal() {
         {currentBlogs.map((blog, idx) => (
           <div
             key={`${currentPage}-${idx}`}
-            className="flex flex-row h-[200px] items-center overflow-hidden border-b-[0.2px] border-white/20 hover:border-white/30 transition-all duration-500 group shadow-2xl hover:shadow-blue-900/10 cursor-pointer"
+            className="flex flex-col-reverse md:flex-row h-auto md:h-[200px] items-start md:items-center overflow-hidden border-b-[0.2px] border-white/20 hover:border-white/30 transition-all duration-500 group shadow-2xl hover:shadow-blue-900/10 cursor-pointer"
             onClick={() => window.open(blog.link, "_blank")}
           >
-            <div className="p-8 flex flex-col flex-grow">
+            <div className="p-4 md:p-8 flex flex-col flex-grow">
               <div className="flex justify-between items-start w-full mb-4">
-                <h3 className="text-3xl mr-4 text-white group-hover:text-blue-400 transition-colors duration-300">
+                <h3 className="text-xl md:text-3xl mr-4 text-white group-hover:text-blue-400 transition-colors duration-300">
                   {blog.title}
                 </h3>
                 <span className="hidden md:block text-white/30 group-hover:text-blue-400 transition-colors duration-300">{`--->`}</span>
@@ -95,12 +95,12 @@ function Journal() {
               </p>
             </div>
 
-            <div className="relative overflow-hidden aspect-[4/4] w-[200px]">
+            <div className="relative overflow-hidden aspect-[16/9] md:aspect-[6/4] w-full md:w-[200px]">
                <Image
                 src={blog.image}
                 fill
                 alt={`${blog.title} preview`}
-                className="object-contain transition-transform duration-700 group-hover:scale-110 grayscale-[0.8] group-hover:grayscale-0"
+                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.8] group-hover:grayscale-0"
                 loading="lazy"
                 unoptimized={blog.image.startsWith('http')}
               />
@@ -117,11 +117,11 @@ function Journal() {
 
       {/* Pagination Controls */}
       {totalPages > 1 && (
-        <div className="flex justify-between items-center mt-12 px-8">
+        <div className="flex justify-between items-center mt-12 px-0">
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1 || isTransitioning}
-            className={`text-sm tracking-[0.2em] uppercase font-medium transition-all duration-300 ${
+            className={`text-xs md:text-sm tracking-[0.2em] uppercase font-medium transition-all duration-300 ${
               currentPage === 1 
                 ? 'opacity-20 cursor-not-allowed text-white' 
                 : 'hover:text-blue-400 cursor-pointer'
@@ -137,7 +137,7 @@ function Journal() {
           <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages || isTransitioning}
-            className={`text-sm tracking-[0.2em] uppercase font-medium transition-all duration-300 ${
+            className={`text-xs md:text-sm tracking-[0.2em] uppercase font-medium transition-all duration-300 ${
               currentPage === totalPages 
                 ? 'opacity-20 cursor-not-allowed text-white' 
                 : ' hover:text-blue-400 cursor-pointer'

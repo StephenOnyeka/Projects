@@ -53,15 +53,15 @@ const Contribution = () => {
       <div className="mt-6 flex flex-wrap gap-8">
         <div className="flex flex-col">
           <span className="text-[10px] tracking-[0.2em] uppercase opacity-40 font-medium text-white mb-1">TOTAL</span>
-          <span className="text-2xl text-blue-400 font-medium">{stats.totalContributions}</span>
+          <span className="text-xl md:text-2xl text-blue-400 font-medium">{stats.totalContributions}</span>
         </div>
         <div className="flex flex-col">
           <span className="text-[10px] tracking-[0.2em] uppercase opacity-40 font-medium text-white mb-1">BEST STREAK</span>
-          <span className="text-2xl text-blue-400 font-medium">{stats.bestStreak} DAYS</span>
+          <span className="text-xl md:text-2xl text-blue-400 font-medium">{stats.bestStreak} DAYS</span>
         </div>
         <div className="flex flex-col">
           <span className="text-[10px] tracking-[0.2em] uppercase opacity-40 font-medium text-white mb-1">CURRENT STREAK</span>
-          <span className="text-2xl text-blue-400 font-medium">{stats.currentStreak} DAYS</span>
+          <span className="text-xl md:text-2xl text-blue-400 font-medium">{stats.currentStreak} DAYS</span>
         </div>
       </div>
     </div>

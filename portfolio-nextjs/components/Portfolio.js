@@ -124,11 +124,11 @@ function Portfolio() {
       data-aos="fade-up"
     >
       {/* Filter Tabs */}
-      <div className="flex flex-wrap justify-center gap-4 mb-12 sticky top-0 z-30 bg-black/50 backdrop-blur-md py-4 w-full">
+      <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12 sticky top-0 z-30 bg-black/50 backdrop-blur-md md:pt-20 py-4 w-full">
         {["web", "mobile", "all"].map((filter) => (
           <button
             key={filter}
-            className={`px-8 py-2 font-Inter text-sm tracking-widest uppercase transition-all duration-300 ${
+            className={`py-2 font-Inter text-xs md:text-sm tracking-widest uppercase transition-all duration-300 ${
               projectFilter === filter 
                 ? "text-white border-b border-white" 
                 : "text-white/40 hover:text-white/80"
@@ -144,8 +144,9 @@ function Portfolio() {
         {filteredProjects.map((project) => (
           <div
             key={project.id}
-            className="flex flex-row h-[200px] overflow-hidden border-b-[0.2px] border-white/20 hover:border-white/30 transition-all duration-500 group shadow-2xl hover:shadow-blue-900/10"
+            className="flex flex-col-reverse md:flex-row h-auto md:h-[200px] overflow-hidden border-b-[0.2px] border-white/20 hover:border-white/30 transition-all duration-500 group shadow-2xl hover:shadow-blue-900/10"
           >
+            {/* <div className="px-4 md:px-8 p-8 flex flex-col flex-grow"> */}
             <div className="p-8 flex flex-col flex-grow">
               <div className="flex justify-between items-start w-full mb-4">
                 <h3 className="text-3xl text-white group-hover:text-white transition-colors">
@@ -169,7 +170,7 @@ function Portfolio() {
               </p>
             </div>
 
-            <div className="relative overflow-hidden aspect-[4/4]">
+            <div className="relative overflow-hidden aspect-[4/3] md:aspect-[4/4] w-full md:w-[300px]">
                <Image
                 src={project.image}
                 fill

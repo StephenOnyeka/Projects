@@ -5,13 +5,15 @@ function Navbar() {
   const navItems = ['ABOUT ME', 'EXPERIENCE', 'PROJECTS', 'CONTACT']
 
   return (
-    <header className="relative z-50 flex justify-between items-center px-6 md:px-12 py-8 md:py-10 text-[10px] md:text-[11px] tracking-[0.2em] md:tracking-[0.25em] font-medium uppercase">
-      <div className="hover:opacity-70 cursor-pointer transition-opacity z-50 text-white">STEPHEN ONYEKA</div>
+    // <header className="relative z-50 flex justify-between items-center px-4 md:px-12 py-4 md:py-10 text-[11px] tracking-[0.2em] md:tracking-[0.25em] font- uppercase">
+    <div className='fixed top-0 left-0 w-full z-50 '>
+    <header className="relative z-50 flex justify-between items-center px-4 md:px-12 py-4 md:py-10 text-[11px] tracking-[0.2em] md:tracking-[0.25em] font- uppercase">
+      <div className="hover:opacity-70 cursor-pointer transition-opacity z-50 text-white whitespace-nowrap">STEPHEN ONYEKA</div>
       
       {/* Desktop Nav */}
-      <nav className="hidden md:flex gap-6">
+      <nav className="hidden md:flex gap-6 whitespace-nowrap">
         {navItems.map((item) => (
-          <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:opacity-70 transition-opacity text-white">
+          <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="hover:opacity-70 transition-opacity text-white whitespace-nowrap">
             {item}
           </a>
         ))}
@@ -45,7 +47,7 @@ function Navbar() {
 
          {/* Mobile Menu Footer Info */}
          <div className="mt-auto space-y-6 text-white">
-            <p className="text-[10px] tracking-[0.25em] uppercase opacity-40 font-medium text-white">BASED IN LAGOS, NIGERIA.</p>
+            <p className="text-[10px] tracking-[0.25em] uppercase opacity-40 font-medium text-white">BASED IN NIGERIA.</p>
             <div className="space-y-1">
                 <p className="text-[14px] tracking-[0.1em] uppercase font-bold opacity-90 text-white">SOFTWARE DEVELOPER - DESIGN SYSTEMS & AI</p>
                 <p className="text-[14px] tracking-[0.1em] uppercase font-bold opacity-90 text-white">SPECIALIST</p>
@@ -53,6 +55,7 @@ function Navbar() {
          </div>
       </div>
     </header>
+    </div>
   )
 }
 
