@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { IoIosNotifications } from "react-icons/io";
-
 const ScrollDiv = () => {
   const [showDiv, setShowDiv] = useState(false);
 
@@ -21,10 +19,6 @@ const ScrollDiv = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // useEffect(() => {
-  const mustTrue = () => setShowDiv(true);
-  // })
 
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);

@@ -11,8 +11,6 @@ import {
   FaJs,
   FaReact,
   FaNodeJs,
-  FaLinkedin,
-  FaFigma,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -20,7 +18,6 @@ import {
   SiNextdotjs,
   SiMongodb,
   SiGit,
-  SiExpo,
 } from "react-icons/si";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Navbar from "../components/Navbar";
@@ -64,7 +61,7 @@ function HeroAnimatedCard() {
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        I'm a <span className="text-purple-300">{typeEffect}</span>
+        I&apos;m a <span className="text-purple-300">{typeEffect}</span>
         <span>
           <Cursor cursorStyle="|" />
         </span>
@@ -399,18 +396,19 @@ export default function ModernFullPreview() {
               <div className="w-full md:w-1/2 font-Inter">
                 <div className="w-full">
                   <p className="text-white text-lg max-sm:text-[1rem] font-Montserrat">
-                    I'm a software developer with a proven track record of
+                    I&apos;m a software developer with a proven track record of
                     building successful web and mobile applications.
                     <br />
                     <br />
                     My expertise spans the full development lifecycle, from
                     concept and design to development, testing, and deployment.
-                    I'm proficient in React, Nextjs, Nodejs, MongoDB,
-                    ReactNative etc. I'm passionate about clean code, efficient
-                    architecture, and creating seamless user experiences.
+                    I&apos;m proficient in React, Nextjs, Nodejs, MongoDB,
+                    ReactNative etc. I&apos;m passionate about clean code,
+                    efficient architecture, and creating seamless user
+                    experiences.
                     <br />
                     <br />
-                    I'm eager to tackle new challenges and collaborate with
+                    I&apos;m eager to tackle new challenges and collaborate with
                     clients to deliver exceptional results.
                     <br />
                     <br />
@@ -566,9 +564,11 @@ export default function ModernFullPreview() {
               data-aos="zoom-in"
               data-aos-delay="1100"
             >
-              <img
+              <Image
                 src="/images/5968705.png"
                 alt="Figma"
+                width={56}
+                height={56}
                 className="w-14 h-14 drop-shadow-lg rounded-md object-contain"
               />
               {/* <span className="text-white text-xs mt-2 font-Inter">Figma</span> */}
@@ -579,9 +579,11 @@ export default function ModernFullPreview() {
               data-aos="zoom-in"
               data-aos-delay="1200"
             >
-              <img
+              <Image
                 src="/images/banner.png"
                 alt="Expo"
+                width={56}
+                height={56}
                 className="w-14 h-14 drop-shadow-lg rounded-md object-contain"
               />
               {/* <span className="text-white text-xs mt-2 font-Inter">Expo</span> */}
@@ -691,22 +693,22 @@ export default function ModernFullPreview() {
                         tech === "React Native" || tech === "React"
                           ? "bg-indigo-800 text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
                           : tech === "Next.js"
-                          ? "bg-black/80 text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
-                          : tech === "Node.js"
-                          ? "bg-[#3c873a] text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
-                          : tech === "JSON"
-                          ? "bg-[#f7df1e] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
-                          : tech === "Javascript"
-                          ? "bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
-                          : tech === "HTML"
-                          ? "bg-[#e34c26] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
-                          : tech === "CSS"
-                          ? "bg-[#1572b6] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
-                          : tech === "Tailwind"
-                          ? "bg-[#38bdf8] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
-                          : tech === "Expo"
-                          ? "bg-[#000020] text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
-                          : "bg-purple-700 text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
+                            ? "bg-black/80 text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
+                            : tech === "Node.js"
+                              ? "bg-[#3c873a] text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
+                              : tech === "JSON"
+                                ? "bg-[#f7df1e] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
+                                : tech === "Javascript"
+                                  ? "bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
+                                  : tech === "HTML"
+                                    ? "bg-[#e34c26] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
+                                    : tech === "CSS"
+                                      ? "bg-[#1572b6] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
+                                      : tech === "Tailwind"
+                                        ? "bg-[#38bdf8] text-black px-3 py-1 rounded-full text-xs font-medium font-Inter"
+                                        : tech === "Expo"
+                                          ? "bg-[#000020] text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
+                                          : "bg-purple-700 text-white px-3 py-1 rounded-full text-xs font-medium font-Inter"
                       }
                     >
                       {tech}
@@ -805,14 +807,14 @@ export default function ModernFullPreview() {
                     >
                       {blog.summary}
                     </p>
-                    <a
+                    <Link
                       className="shiny-button px-6 py-2 font-Inter text-white bg-purple-700 hover:bg-purple-900 rounded-xl transition-colors duration-200 text-center"
                       data-aos="zoom-in"
                       data-aos-delay="200"
                       href={blog.link}
                     >
                       Read More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

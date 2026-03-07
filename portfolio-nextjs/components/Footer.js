@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { FaXTwitter } from "react-icons/fa6";
-import { FaSkype } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
@@ -13,7 +12,7 @@ function Footer() {
         <div className="px-12 max-sm:px-4 flex max-sm:flex-wrap max-sm:gap-y-2 max-sm:justify-center max-sm:text-center justify-between items-center">
           <div className="w-full">
             <p className="text-white/90 font-light max-sm:text-sm">
-              Steve's © 2025. All Rights Reserved.
+              Steve&apos;s © 2025. All Rights Reserved.
             </p>
           </div>
           <div className="w-full flex items-center gap-4 justify-end">

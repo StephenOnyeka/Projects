@@ -37,7 +37,7 @@ const Contribution = () => {
   return (
     <div className="w-full">
       <div className="grid grid-flow-col grid-rows-7 gap-1 md:gap-1.5 overflow-x-auto pb-4 no-scrollbar">
-        {recentContributions.map((day, index) => (
+        {recentContributions.map((day) => (
           <div
             key={day.date}
             title={`${day.date}: ${day.contributions} contributions`}

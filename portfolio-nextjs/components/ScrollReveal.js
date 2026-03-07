@@ -1,4 +1,4 @@
-import { useScroll, useTransform, motion, useSpring } from 'framer-motion';
+import { useScroll, useTransform, motion } from 'framer-motion';
 import React, { useRef } from 'react';
 
 const ScrollReveal = ({ text }) => {
