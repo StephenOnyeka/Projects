@@ -124,7 +124,7 @@ function Portfolio() {
       data-aos="fade-up"
     >
       {/* Filter Tabs */}
-      <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12 sticky top-0 z-30 bg-black/50 backdrop-blur-md md:pt-20 py-4 w-full">
+      <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-12 sticky top-0 z-30 bg-black/50 backdrop-blur-md pt-12 md:pt-20 py-4 w-full">
         {["web", "mobile", "all"].map((filter) => (
           <button
             key={filter}

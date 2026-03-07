@@ -7,12 +7,14 @@ import Portfolio from '@/components/Portfolio'
 import Journal from '@/components/Journal'
 import Contribution from '@/components/Contribution'
 import Connect from '@/components/Connect'
+import FadeUp from '@/components/FadeUp'
 
 function New() {
   return (
-    <>
+    <><FadeUp>
       <div className="relative min-h-screen w-full bg-black text-white font-Inter overflow-hidden flex flex-col">
         {/* Background Image */}
+        
         
         <div 
           className="absolute inset-0 z-0 bg-[url('/images/img.jpeg')] md:bg-[url('/images/Gem.png')] bg-cover bg-no-repeat bg-center md:bg-top"
@@ -23,10 +25,7 @@ function New() {
         
 
         {/* Navbar Component */}
-        {/* <div className=''> */}
         <Navbar />
-        {/* </div> */}
-
         {/* Main Hero Content - Marquee */}
         <main className="relative z-10 flex-grow flex items-center justify-center overflow-hidden">
           <div className="marquee-container w-full whitespace-nowrap pointer-events-none select-none">
@@ -71,60 +70,70 @@ function New() {
             100% { transform: translateX(-50%); }
           }
         `}</style>
+       
       </div>
+       </FadeUp>
 
       <section id="about" className="bg-black h-full py-12 md:py-20 px-6 md:px-20">
-        <div className=''>            
-            <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-medium"> - ABOUT ME</p>
-            <br/>
-        </div>
-          <About />
-          <Tech />
-        
+        <FadeUp>
+          <div className=''>            
+              <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-medium"> - ABOUT ME</p>
+              <br/>
+          </div>
+            <About />
+            <Tech />
+        </FadeUp>
       </section>
-      <section id="experience" className="bg-black h-full py-12 md:py-20 px-4 md:px-20">
-        <div className=''>            
-            <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-medium"> - EXPERIENCE</p>
-            <br/>
-        </div>
-          <Experience />
+      <section id="experience" className="bg-black h-full py-12 md:py-20">
+        <FadeUp>
+          <div className=' px-4 md:px-20'>            
+              <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-medium"> - EXPERIENCE</p>
+              <br/>
+          </div>
+          <div className=' px-4 md:px-20 '>
+            <Experience />            
+          </div>
           <History />
-        
+        </FadeUp>
       </section>
       <section id="projects" className="bg-black h-full py-12 md:py-20 px-6 md:px-20">
-        <div className=''>  
-            <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal"> {'-'} PROJECTS</p>
-            <br/>
-        </div>
-          <Projects />
-          <Portfolio />
-        
+        <FadeUp>
+          <div className=''>  
+              <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal"> {'-'} PROJECTS</p>
+              <br/>
+          </div>
+            <Projects />
+            <Portfolio />
+        </FadeUp>
       </section>
       <section id="blogs" className="bg-black h-full py-12 md:py-20 px-6 md:px-20">
-        <div className=''> 
-            <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal"> {'-'} BLOGS</p>
+        <FadeUp>
+          <div className=''> 
+              <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal"> {'-'} BLOGS</p>
 
-            <br/>
-        </div>
-          <Blogs />
-          <Journal />
-        
+              <br/>
+          </div>
+            <Blogs />
+            <Journal />
+        </FadeUp>
       </section>
       <section id="contribution" className="bg-black h-full py-12 md:py-20 px-4 md:px-20">
-        <div className=''> 
-            <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal"> {'-'} CONTRIBUTION</p>
-            <br/>
-        </div>
-          <Contribution />
-        
+        <FadeUp>
+          <div className=''> 
+              <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal"> {'-'} CONTRIBUTION</p>
+              <br/>
+          </div>
+            <Contribution />
+        </FadeUp>
       </section>
       <section id="contact" className="bg-black h-full py-12 md:py-20 px-6 md:px-20 border-t border-white/5">
-        <div className=''> 
-            <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-medium"> {'-'} CONTACT </p>
-            <br/>
-        </div>
-          <Connect />
-        
+        <FadeUp>
+          <div className=''> 
+              <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-medium"> {'-'} CONTACT </p>
+              <br/>
+          </div>
+            <Connect />
+        </FadeUp>
       </section>
     </>
   )

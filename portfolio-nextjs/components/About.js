@@ -2,7 +2,8 @@ import React from 'react'
 import ScrollReveal from './ScrollReveal'
 
 const About = () => {
-    const text = "I'm passionate about writing clean code, efficient architecture, and creating seamless user experiences --> Eager to tackle new challenges and collaborate with like-minds to deliver exceptional results.";
+    // const text = "I'm passionate about writing clean code, efficient architecture, and creating seamless user experiences --> Eager to tackle new challenges and collaborate with like-minds to deliver exceptional results.";
+    const text = "I'm passionate about writing clean code, and efficient architecture --> Eager to tackle new challenges and collaborate with like-minds to deliver exceptional results.";
 
     return (
         <div id="about" className='text-white text-left min-h-[50vh] flex items-center mb-20'>
