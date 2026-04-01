@@ -8,22 +8,42 @@ import Journal from "@/components/Journal";
 import Contribution from "@/components/Contribution";
 import Connect from "@/components/Connect";
 import FadeUp from "@/components/FadeUp";
+import { motion } from "framer-motion";
+
+const sectionLabelVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+  },
+};
 
 function New() {
   return (
     <>
-      <FadeUp>
+      {/* ── HERO ── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+      >
         <div className="relative min-h-screen w-full bg-black text-white font-Inter overflow-hidden flex flex-col">
           {/* Background Image */}
-
           <div className="absolute inset-0 z-0 bg-[url('/images/img.jpeg')] md:bg-[url('/images/Gem.png')] bg-cover bg-no-repeat bg-center md:bg-top">
-            <div className="bg-gradient-to-b from-black/10 to-black/80 md:from-black/15 md:to-black/70 h-screen px-8 pt-8 max-sm:px-4 w-full text-white grid grid-cols-1"></div>
+            <div className="bg-gradient-to-b from-black/10 to-black/80 md:from-black/15 md:to-black/70 h-screen px-8 pt-8 max-sm:px-4 w-full text-white grid grid-cols-1" />
           </div>
 
-          {/* Navbar Component */}
+          {/* Navbar */}
           <Navbar />
-          {/* Main Hero Content - Marquee */}
-          <main className="relative z-10 flex-grow flex items-center justify-center overflow-hidden">
+
+          {/* Marquee */}
+          <motion.main
+            className="relative z-10 flex-grow flex items-center justify-center overflow-hidden"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="marquee-container w-full whitespace-nowrap pointer-events-none select-none">
               <div className="marquee-content flex items-center">
                 {[...Array(4)].map((_, i) => (
@@ -40,20 +60,39 @@ function New() {
                 ))}
               </div>
             </div>
-          </main>
+          </motion.main>
 
-          {/* Footer Text */}
-          <div className="relative z-20 px-6 md:px-12 pb-10 flex flex-col md:flex-row md:justify-between items-start md:items-end gap-6 md:gap-0 mt-auto">
+          {/* Hero Footer Text */}
+          <motion.div
+            className="relative z-20 px-6 md:px-12 pb-10 flex flex-col md:flex-row md:justify-between items-start md:items-end gap-6 md:gap-0 mt-auto"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          >
             <div className="order-1">
               <p className="text-[10px] md:text-[12px] tracking-[0.2em] md:tracking-[0.3em] uppercase font-medium">
                 BASED IN NIGERIA.
               </p>
             </div>
             <div className="text-left md:text-right leading-tight order-2">
-              <p className="text-[2rem] md:text-[3rem] ">Software Engineer</p>
-              <p className="text-[2rem] md:text-[3rem] ">Design Systems & AI</p>
+              <motion.p
+                className="text-[2rem] md:text-[3rem]"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.75 }}
+              >
+                Software Engineer
+              </motion.p>
+              <motion.p
+                className="text-[2rem] md:text-[3rem]"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: 0.9 }}
+              >
+                Design Systems &amp; AI
+              </motion.p>
             </div>
-          </div>
+          </motion.div>
 
           <style jsx>{`
             .marquee-container {
@@ -64,7 +103,9 @@ function New() {
               display: flex;
               width: fit-content;
               animation: marquee 35s linear infinite;
-              @media (max-width: 768px) {
+            }
+            @media (max-width: 768px) {
+              .marquee-content {
                 animation: marquee 20s linear infinite;
               }
             }
@@ -78,99 +119,122 @@ function New() {
             }
           `}</style>
         </div>
-      </FadeUp>
+      </motion.div>
 
-      <section
-        id="about"
-        className="bg-black h-full py-12 md:py-20 px-6 md:px-20"
-      >
+      {/* ── ABOUT ── */}
+      <section id="about" className="bg-black h-full py-12 md:py-20 px-6 md:px-20">
         <FadeUp>
-          <div className="">
+          <motion.div
+            variants={sectionLabelVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-medium">
-              {" "}
-              - ABOUT ME
+              {" "}- ABOUT ME
             </p>
             <br />
-          </div>
+          </motion.div>
           <About />
           <Tech />
         </FadeUp>
       </section>
+
+      {/* ── EXPERIENCE ── */}
       <section id="experience" className="bg-black h-full py-12 md:py-20">
         <FadeUp>
-          <div className=" px-4 md:px-20">
+          <motion.div
+            className="px-4 md:px-20"
+            variants={sectionLabelVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-medium">
-              {" "}
-              - EXPERIENCE
+              {" "}- EXPERIENCE
             </p>
             <br />
-          </div>
-          <div className=" px-4 md:px-20 ">
+          </motion.div>
+          <div className="px-4 md:px-20">
             <Experience />
           </div>
           <History />
         </FadeUp>
       </section>
-      <section
-        id="projects"
-        className="bg-black h-full py-12 md:py-20 px-6 md:px-20"
-      >
-        <FadeUp>
-          <div className="">
+
+      {/* ── PROJECTS ── */}
+      <section id="projects" className="bg-black h-full py-12 md:py-20 px-6 md:px-20">
+        {/* <FadeUp> */}
+          <motion.div
+            variants={sectionLabelVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal">
-              {" "}
-              {"-"} PROJECTS
+              {" "}{"- PROJECTS"}
             </p>
             <br />
-          </div>
+          </motion.div>
           <Projects />
           <Portfolio />
-        </FadeUp>
+        {/* </FadeUp> */}
       </section>
-      <section
-        id="blogs"
-        className="bg-black h-full py-12 md:py-20 px-6 md:px-20"
-      >
-        <FadeUp>
-          <div className="">
-            <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal">
-              {" "}
-              {"-"} BLOGS
-            </p>
 
+      {/* ── BLOGS ── */}
+      <section id="blogs" className="bg-black h-full py-12 md:py-20 px-6 md:px-20">
+        <FadeUp>
+          <motion.div
+            variants={sectionLabelVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal">
+              {" "}{"- BLOGS"}
+            </p>
             <br />
-          </div>
+          </motion.div>
           <Blogs />
           <Journal />
         </FadeUp>
       </section>
-      <section
-        id="contribution"
-        className="bg-black h-full py-12 md:py-20 px-4 md:px-20"
-      >
+
+      {/* ── CONTRIBUTION ── */}
+      <section id="contribution" className="bg-black h-full py-12 md:py-20 px-4 md:px-20">
         <FadeUp>
-          <div className="">
+          <motion.div
+            variants={sectionLabelVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-normal">
-              {" "}
-              {"-"} CONTRIBUTION
+              {" "}{"- CONTRIBUTION"}
             </p>
             <br />
-          </div>
+          </motion.div>
           <Contribution />
         </FadeUp>
       </section>
+
+      {/* ── CONTACT ── */}
       <section
         id="contact"
         className="bg-black h-full py-12 md:py-20 px-6 md:px-20 border-t border-white/5"
       >
         <FadeUp>
-          <div className="">
+          <motion.div
+            variants={sectionLabelVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <p className="text-[14px] tracking-[0.1em] uppercase text-blue-400 font-medium">
-              {" "}
-              {"-"} CONTACT{" "}
+              {" "}{"- CONTACT "}
             </p>
             <br />
-          </div>
+          </motion.div>
           <Connect />
         </FadeUp>
       </section>

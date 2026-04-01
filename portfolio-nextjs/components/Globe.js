@@ -9,30 +9,18 @@ export default function Globe({ size = 600, wrapperStyle = {} }) {
     let animationFrameId;
 
     const globe = createGlobe(canvasRef.current, {
-      devicePixelRatio: 1,        // was 2 — cuts canvas pixels by 75%
+      devicePixelRatio: 1,
   width: size * 2,
   height: size * 2,
   phi: 0,
   theta: 0,
   dark: 1,
   diffuse: 1.2,
-  mapSamples: 8000,           // was 16000
+  mapSamples: 8000,
   mapBrightness: 8,
   baseColor: [0.3, 0.3, 0.3],
   markerColor: [0.1, 0.8, 1],
   glowColor: [1, 1, 1],
-      // devicePixelRatio: 2,
-      // width: size * 2,
-      // height: size * 2,
-      // phi: 0,
-      // theta: 0,
-      // dark: 1,
-      // diffuse: 1.2,
-      // mapSamples: 16000,
-      // mapBrightness: 6,
-      // baseColor: [0.3, 0.3, 0.3],
-      // markerColor: [0.1, 0.8, 1],
-      // glowColor: [1, 1, 1],
     });
 
     function animate() {
