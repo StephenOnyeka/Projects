@@ -164,7 +164,7 @@ function New() {
 
       {/* ── PROJECTS ── */}
       <section id="projects" className="bg-black h-full py-12 md:py-20 px-6 md:px-20">
-        {/* <FadeUp> */}
+        <FadeUp>
           <motion.div
             variants={sectionLabelVariants}
             initial="hidden"
@@ -177,8 +177,11 @@ function New() {
             <br />
           </motion.div>
           <Projects />
+          </FadeUp>
+          {/* <FadeUp> */}
           <Portfolio />
-        {/* </FadeUp> */}
+          {/* </FadeUp> */}
+        
       </section>
 
       {/* ── BLOGS ── */}
