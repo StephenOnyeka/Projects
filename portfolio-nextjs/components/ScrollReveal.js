@@ -14,7 +14,7 @@ const ScrollReveal = ({ text }) => {
   return (
     <p 
       ref={element} 
-      className="flex flex-wrap text-[2rem] md:text-[4rem] leading-[1] font-semibold text-white"
+      className="flex flex-wrap text-[2rem] md:text-[4rem] leading-[1] font-medium md:font-semibold text-white"
     >
       {words.map((word, i) => {
         const start = i / words.length;

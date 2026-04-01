@@ -1,9 +1,67 @@
-/*
- * Globe (framer/Globe@0.7.0)
- *
- * Learn More: https://www.framer.com/asset-urls
- */
+import createGlobe from "cobe";
+import { useEffect, useRef } from "react";
 
-export * from "https://framerusercontent.com/modules/xFhv3ETdRBLjJusGaZ1P/SY4EOdo4KxEvLISnWiR3/Globe.js"
-export { default } from "https://framerusercontent.com/modules/xFhv3ETdRBLjJusGaZ1P/SY4EOdo4KxEvLISnWiR3/Globe.js"
+export default function Globe({ size = 600, wrapperStyle = {} }) {
+  const canvasRef = useRef();
 
+  useEffect(() => {
+    let phi = 0;
+    let animationFrameId;
+
+    const globe = createGlobe(canvasRef.current, {
+      devicePixelRatio: 1,        // was 2 — cuts canvas pixels by 75%
+  width: size * 2,
+  height: size * 2,
+  phi: 0,
+  theta: 0,
+  dark: 1,
+  diffuse: 1.2,
+  mapSamples: 8000,           // was 16000
+  mapBrightness: 8,
+  baseColor: [0.3, 0.3, 0.3],
+  markerColor: [0.1, 0.8, 1],
+  glowColor: [1, 1, 1],
+      // devicePixelRatio: 2,
+      // width: size * 2,
+      // height: size * 2,
+      // phi: 0,
+      // theta: 0,
+      // dark: 1,
+      // diffuse: 1.2,
+      // mapSamples: 16000,
+      // mapBrightness: 6,
+      // baseColor: [0.3, 0.3, 0.3],
+      // markerColor: [0.1, 0.8, 1],
+      // glowColor: [1, 1, 1],
+    });
+
+    function animate() {
+      phi += 0.005;
+      globe.update({ phi });
+      animationFrameId = requestAnimationFrame(animate);
+    }
+
+    animationFrameId = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+      globe.destroy();
+    };
+  }, [size]);
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        ...wrapperStyle,
+      }}
+    >
+      <canvas
+        ref={canvasRef}
+        style={{ width: size, height: size, maxWidth: "100%", aspectRatio: "1/1" }}
+      />
+    </div>
+  );
+}

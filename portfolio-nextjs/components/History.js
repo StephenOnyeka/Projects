@@ -1,5 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+// import Globe from "@/components/Globe";
+
+import dynamic from "next/dynamic";
+
+const Globe = dynamic(() => import("@/components/Globe"), { ssr: false });
 
 function History() {
   const experience = [
@@ -40,26 +45,29 @@ function History() {
       link: "https://www.innobyteservices.com/",
     },
   ];
+
+    const [globeSize, setGlobeSize] = useState(500);
+
+  useEffect(() => {
+    const update = () => setGlobeSize(window.innerWidth < 768 ? 280 : 500);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   return (
-    // <div className="relative w-full overflow-hidden rounded-3xl group" style={{ clipPath: 'inset(0 0 0 0)' }}>
+    <>
+ {/* <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
+        <Globe size={500} />
+      </div> */}
+
     <div
       className="relative w-full overflow-hidden rounded-3xl group"
       style={{ clipPath: "inset(0)" }}
     >
-      {/* Background Video */}
-      {/* <div className="fixed inset-0 z-0 pointer-events-none"> */}
-      <div className="fixed inset-0 z-0 m-none p-none">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-contain md:object-cover grayscale brightness-90 contrast-125 object-fit"
-        >
-          <source src="/vids/downloaded-file (1).mp4" type="video/mp4" />
-        </video>
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/5 group-hover:bg-black/20 transition-colors duration-500"></div>
+      {/* Background Globe */}
+      <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none">
+        <Globe size={globeSize} />
       </div>
 
       <div className="relative z-10 flex flex-col px-8 md:px-32 py-8">
@@ -81,13 +89,13 @@ function History() {
             </div>
             <div className="flex items-center gap-4">
               <span className="hidden md:block text-white/30">{`--->`}</span>
-              {/* <span className="block text-white/30">{`--->`}</span> */}
               <p className="text-xl md:text-2xl font-medium">{item.year}</p>
             </div>
           </div>
         ))}
       </div>
     </div>
+    </>
   );
 }
 
