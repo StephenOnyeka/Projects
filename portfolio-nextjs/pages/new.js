@@ -178,9 +178,7 @@ function New() {
           </motion.div>
           <Projects />
           </FadeUp>
-          {/* <FadeUp> */}
           <Portfolio />
-          {/* </FadeUp> */}
         
       </section>
 

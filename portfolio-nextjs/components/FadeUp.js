@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const FadeUp = ({ children, delay = 0, direction = "up", amount = 0.2, className = "" }) => {
+// const FadeUp = ({ children, delay = 0, direction = "up", amount = 0.2, className = "" }) => {
+const FadeUp = ({ children, direction = "up", amount = 0.2, className = "" }) => {
   const directionMap = {
     up:    { y: 40,  x: 0   },
     down:  { y: -40, x: 0   },
