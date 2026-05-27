@@ -186,12 +186,12 @@ export default function ModernFullPreview() {
     {
       id: 6,
       type: "web",
-      name: "COLOR",
-      image: "/images/projects/Screenshot 2025-02-13 040455.png",
+      name: "Bons",
+      image: "/images/projects/Bons.png",
       tech: ["HTML", "CSS", "Javascript"],
-      desc: "A portfolio website built with main focus on color gradience",
-      demo: "https://stephenonyeka.github.io/lan-page/#home",
-      github: "https://github.com/StephenOnyeka/lan-page",
+      desc: "A landing page for a Pure Table Water; Mineral-balanced water drawn from protected springs and triple-filtered for a cool taste.",
+      demo: "https://stephenonyeka.github.io/Bons/",
+      github: "https://github.com/StephenOnyeka/Bons",
     },
 
     {
