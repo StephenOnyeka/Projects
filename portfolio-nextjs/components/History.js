@@ -26,6 +26,12 @@ function History() {
     {
       year: "Now",
       title: "Frontend Software Engineer",
+      company: "Groom",
+      link: "https://usegroom.com/",
+    },
+    {
+      year: "2026",
+      title: "Frontend Software Engineer",
       company: "Cuoral",
       link: "https://cuoral.com/",
     },
@@ -38,15 +44,15 @@ function History() {
     {
       year: "2024",
       title: "Frontend Software Engineer",
-      company: "SFCollab",
-      link: "https://sfcollab.com/",
+      company: "Advancly",
+      link: "https://advancly.com/",
     },
-    {
-      year: "2024",
-      title: "Frontend Software Engineer",
-      company: "CanadianNewsHub",
-      link: "https://canadiannewshub.ca/",
-    },
+    // {
+    //   year: "2024",
+    //   title: "Frontend Software Engineer",
+    //   company: "CanadianNewsHub",
+    //   link: "https://canadiannewshub.ca/",
+    // },
     {
       year: "2023",
       title: "Frontend Software Developer",
@@ -55,9 +61,9 @@ function History() {
     },
     {
       year: "2022",
-      title: "Frontend Engineer (Internship)",
-      company: "Innobyte Services",
-      link: "https://www.innobyteservices.com/",
+      title: "Wordpress Developer",
+      company: "Upwork",
+      link: "https://www.upwork.com/",
     },
   ];
 
