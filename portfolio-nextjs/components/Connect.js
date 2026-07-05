@@ -39,7 +39,7 @@ const Connect = () => {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/stephen-onyeka/" },
     { label: "GitHub", href: "https://github.com/StephenOnyeka/" },
     { label: "X (Twitter)", href: "https://twitter.com/DonMizzy10" },
-    { label: "WhatsApp", href: "https://wa.me/09162342603" },
+    { label: "WhatsApp", href: "https://wa.me/+2349162342603" },
     { label: "Email", href: "mailto:ejeanobionyeka@gmail.com" },
   ];
 
