@@ -23,14 +23,14 @@ const rowVariants = {
 
 function History() {
   const experience = [
+    // {
+    //   year: "Now",
+    //   title: "Frontend Software Engineer",
+    //   company: "Groom",
+    //   link: "https://usegroom.com/",
+    // },
     {
       year: "Now",
-      title: "Frontend Software Engineer",
-      company: "Groom",
-      link: "https://usegroom.com/",
-    },
-    {
-      year: "2026",
       title: "Frontend Software Engineer",
       company: "Cuoral",
       link: "https://cuoral.com/",

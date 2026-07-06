@@ -36,8 +36,9 @@ function Tech() {
             key={index}
             variants={iconVariants}
             whileHover={{
-              scale: 1.3,
-              rotate: [0, -8, 8, 0],
+              // scale: 1.3,
+              // rotate: [0, -8, 8, 0],
+              opacity: 0.5,
               transition: { duration: 0.4, ease: 'easeInOut' },
             }}
             whileTap={{ scale: 0.9 }}

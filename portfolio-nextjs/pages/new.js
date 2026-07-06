@@ -49,7 +49,7 @@ function New() {
                 {[...Array(4)].map((_, i) => (
                   <h1
                     key={i}
-                    className="text-[16rem] sm:text-[10rem] md:text-[20rem] leading-none font-medium max-sm:tracking-tight flex items-center pr-12 md:pr-20 opacity-80"
+                    className="text-[16rem] sm:text-[10rem] md:text-[20rem] leading-none font-semibold max-sm:tracking-tight flex items-center pr-12 md:pr-20 opacity-80"
                   >
                     <span className="inline-block">Stephen</span>
                     <span className="inline-block mx-[4rem]">Onyeka</span>
