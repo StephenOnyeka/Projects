@@ -37,7 +37,7 @@ function History() {
     },
     {
       year: "2025",
-      title: "Frontend Software Developer",
+      title: "Software Engineer",
       company: "OurPropertyNG",
       link: "https://ourproperty.ng/",
     },
