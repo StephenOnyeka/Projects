@@ -295,7 +295,6 @@ function Portfolio() {
       id: 9,
       type: "mobile",
       name: "Leafy",
-      // image: "/images/projects/Leafy.png",
       image: "/images/projects/Leafy.png",
       tech: ["React Native", "Expo", "JSON"],
       desc: "An ecommerce app for plant sales, organized by decor category (e.g., low-light, statement, pet-safe) rather than a flat product list. Built with React Native and Expo.",
