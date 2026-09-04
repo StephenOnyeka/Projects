@@ -7,7 +7,7 @@ import Data from "../products.json";
 import { Link } from "react-router-dom";
 
 function Men() {
-  const [items, setItems] = useState(Data);
+  const [items] = useState(Data);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
