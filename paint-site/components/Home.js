@@ -48,7 +48,7 @@ function HoMe() {
             </p>
             <p className="text-4xl lg:text-5xl xl:text-6xl font-bold text-primary pb-4 ">
               {/* ProRange: <br /> */}
-              AdorationPaints: <br />
+              AdorationPaintszz: <br />
               premium painting company
             </p>
             <Link href="/services">
