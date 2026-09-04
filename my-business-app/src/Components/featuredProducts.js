@@ -31,14 +31,6 @@ function FeaturedProducts() {
             </div>
           ))}
 
-          {/* <div className="product_cards">
-            <a href="">
-              <img src="\images\Products\A-red.png" alt="" />
-            </a>
-            <h4>Red Printed T-shirts</h4>
-            <span>Men</span>
-            <p>$50.00</p>
-          </div> */}
         </div>
       </div>
 

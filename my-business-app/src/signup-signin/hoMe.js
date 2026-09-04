@@ -13,12 +13,9 @@ import Accessories from "../Components/Routed components/accessories";
 import Men from "../Components/Routed components/men";
 import Women from "../Components/Routed components/women";
 import Cart from "../Components/Routed components/cart";
-// import ProductDescription from "../Components/Routed components/productDescription";
 import DEScription from "../Components/Routed components/DEScription";
 import REViews from "../Components/Routed components/REViews";
 import User from "../Components/Routed components/user";
-
-// import FeaturedProducts from "../Components/featuredProducts";
 import ProDes from "../Components/proDes";
 function HoMe({data, setData}) {
   const cartFromLocalStorage = JSON.parse(
@@ -26,7 +23,7 @@ function HoMe({data, setData}) {
   );
 
   const [cartItems, setCartItems] = useState(cartFromLocalStorage);
-  // const [subtotal, setSubtotal] = useState(0);
+
 
   useEffect(() => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
@@ -104,7 +101,7 @@ function HoMe({data, setData}) {
     <div>
       {showNavbar && <NVBar cartItems={cartItems} subtotal={subtotal} />}
       <Routes>
-        {/* <Route exact path="/" element={<FeaturedProducts />} /> */}
+
         <Route
           exact
           path="/"
@@ -144,7 +141,7 @@ function HoMe({data, setData}) {
             />
           }
         />
-        <Route path="/women" element={<Women />} />
+
         <Route
           path="/user"
           element={

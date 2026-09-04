@@ -9,7 +9,7 @@ import tag from "../logos/tag-free-img.png";
 import Footer1 from "../footer1/footer1";
 import Footer2 from "../footer2/footer2";
 import Span from "../../span";
-// import WhyMe from "..//whyMe";
+
 
 function About({ cartItems, subtotal }) {
   const [loading, setLoading] = useState(true);

@@ -29,12 +29,6 @@ function Women() {
                 <p>${product.price}</p>
               </div>
             ))}
-          {/* <div className="product_cards">
-              <img src="\images\Products\2.jpg" alt="" />
-              <h4>Red Printed T-shirts</h4>
-              <span>Men</span>
-              <p>$50.00</p>
-            </div> */}
         </div>
       </div>
 

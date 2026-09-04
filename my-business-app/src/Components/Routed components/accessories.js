@@ -37,8 +37,6 @@ function Accessories() {
           </div>
         </div>
 
-        {/* <hr /> */}
-
         <Footer1 />
         <Footer2 />
       </>
