@@ -3,21 +3,146 @@
 @tailwind components;
 @tailwind utilities;
 
-/* import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css"; */
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-
 body {
   color: var(--foreground);
   background: var(--background);
-  /* font-family: Arial, Helvetica, sans-serif; */
   font-family: "DM Sans", serif;
-
 }
+
 html {
   scroll-behavior: smooth;
+  /* AOS's fade-left / fade-right start 100px off-axis. Without this they push a
+     horizontal scrollbar onto narrow screens for the length of the animation. */
+  overflow-x: clip;
+}
+
+/* ---------------------------------------------------------------------------
+   Entrance animations
+
+   Everything in the first viewport uses these classes instead of AOS: they are
+   pure CSS, so the content animates from first paint rather than waiting for
+   hydration. AOS is reserved for what the visitor has to scroll to.
+   See components/aos-provider.js.
+   --------------------------------------------------------------------------- */
+@keyframes enter-rise {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes enter-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes carousel-next {
+  from {
+    opacity: 0;
+    transform: translate3d(28px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes carousel-prev {
+  from {
+    opacity: 0;
+    transform: translate3d(-28px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.enter-rise {
+  animation: enter-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.enter-fade {
+  animation: enter-fade 0.8s ease-out both;
+}
+
+.page-enter {
+  animation: page-enter 0.35s ease-out both;
+}
+
+.carousel-next {
+  animation: carousel-next 0.45s ease-out both;
+}
+
+.carousel-prev {
+  animation: carousel-prev 0.45s ease-out both;
+}
+
+/* ---------------------------------------------------------------------------
+   AOS: a shorter rise for tall blocks
+
+   AOS 2.3.4 has no distance option - every fade-up starts 100px low. On a tall
+   element (the testimonial cards) that reads as a long sweep which is still
+   travelling after the card has filled the viewport, and it overlaps whatever
+   sits below it on the way. Any value beginning with "fade" already picks up
+   AOS's own `opacity: 0` + `transition-property` and its `.aos-animate` reset
+   to `translateZ(0)`, plus the generic duration/easing/delay rules, so this
+   only has to declare where the travel starts.
+   --------------------------------------------------------------------------- */
+[data-aos="fade-up-short"] {
+  transform: translate3d(0, 32px, 0);
+}
+
+/* ---------------------------------------------------------------------------
+   Reduced motion: hold every animated element in its finished state.
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  [data-aos],
+  .enter-rise,
+  .enter-fade,
+  .page-enter,
+  .carousel-next,
+  .carousel-prev {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* The accordion is deliberately not in the list above. Radix watches
+     animationName to know when a closing panel has finished, so `animation:
+     none` would leave it mounted; collapsing the duration keeps the name and
+     still removes the motion. */
+  [data-state="open"],
+  [data-state="closed"] {
+    animation-duration: 1ms !important;
+  }
 }

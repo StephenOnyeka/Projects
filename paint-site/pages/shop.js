@@ -1,12 +1,10 @@
-import React,{useEffect} from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-
-import AOS from "aos";
-import "aos/dist/aos.css";
+// AOS is initialised once for the whole app in components/aos-provider.js.
 
 const staticProducts = [
   {
@@ -85,20 +83,11 @@ const staticProducts = [
 ];
 
 export default function Shop({ products }) {
-  console.log({ products });
-    useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      easing: 'ease-in-out', // Animation easing
-      // once: true, // Whether to animate only once
-      // ... other AOS options
-    });
-  }, []);
   return (
     <div>
       <Navbar />
       {/* <h1>About Page</h1> */}
-      <div className="py-16">
+      <div className="py-16 enter-rise">
         <p className="text-4xl lg:text-5xl xl:text-6xl font-bold text-center">
           Shop Now
         </p>
@@ -109,19 +98,26 @@ export default function Shop({ products }) {
             id="prod"
             className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
           >
-            <h2 className="text-2xl font-semibold">Products</h2>
+            <h2 className="text-2xl font-semibold" data-aos="fade-up">
+              Products
+            </h2>
             <br />
-            <div
-              className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
-              data-aos="zoom-in"
-            >
-              {staticProducts.map((product) => (
+            {/* One data-aos="zoom-in" on the grid meant the whole catalogue
+                animated the moment the first row appeared, so everything below
+                the fold was already revealed. Each card now reveals as it
+                arrives, staggered across its row. */}
+            <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+              {staticProducts.map((product, i) => (
                 <Link key={product.id} href={`/products/${product.id}`}>
-                  <div className="group">
+                  <div
+                    className="group"
+                    data-aos="fade-up"
+                    data-aos-delay={(i % 4) * 100 || undefined}
+                  >
                     <Image
                       alt={product.imageAlt}
                       src={product.imageSrc}
-                      className="aspect-square w-full border rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-[7/8]"
+                      className="aspect-square w-full border rounded-lg bg-gray-200 object-cover transition-opacity duration-300 group-hover:opacity-75 xl:aspect-[7/8]"
                       width={500}
                       height={250}
                     />

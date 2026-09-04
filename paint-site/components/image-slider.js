@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { FaArrowRightLong } from "react-icons/fa6";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
+// AOS is initialised once for the whole app in components/aos-provider.js.
 
 const ImageCarousel = () => {
   const images = [
@@ -20,8 +18,14 @@ const ImageCarousel = () => {
     // Add more images as needed
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  // Paging is tracked as a page number instead of a raw index. The old
+  // `currentIndex + slidesToShow` maths left the last window holding a single
+  // image, and `% images.length` then skipped past the first one, so the
+  // carousel drifted out of step after a lap - and again whenever slidesToShow
+  // changed on resize.
+  const [page, setPage] = useState(0);
   const [slidesToShow, setSlidesToShow] = useState(1);
+  const [direction, setDirection] = useState(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,29 +45,41 @@ const ImageCarousel = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Going from one slide to two would otherwise leave an odd page pointing at a
+  // half-empty window.
+  useEffect(() => {
+    setPage(0);
+  }, [slidesToShow]);
+
+  const pageCount = Math.max(1, Math.ceil(images.length / slidesToShow));
+  // Clamped so the final page is always full rather than showing one orphan.
+  const start = Math.min(
+    page * slidesToShow,
+    Math.max(0, images.length - slidesToShow)
+  );
+  const visible = images.slice(start, start + slidesToShow);
+
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + slidesToShow) % images.length);
+    setDirection("next");
+    setPage((prev) => (prev + 1) % pageCount);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => {
-      const newIndex = prevIndex - slidesToShow;
-      return newIndex >= 0 ? newIndex : images.length + newIndex;
-    });
+    setDirection("prev");
+    setPage((prev) => (prev - 1 + pageCount) % pageCount);
   };
 
-    useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      easing: 'ease-in-out', // Animation easing
-      // once: true, // Whether to animate only once
-      // ... other AOS options
-    });
-  }, []);
-
+  // The reveal used to sit on the root below, which is the whole carousel -
+  // heading, arrows and slides together are taller than a viewport on smaller
+  // screens, so the slides were already revealed by the time you scrolled down
+  // to them. The heading and the slides now trigger separately, each when it
+  // actually arrives.
   return (
-    <div className=""  data-aos="fade-up">
-      <div className="flex justify-between gap-16 max-sm:gap-4 max-sm:flex-wrap content-center items-center py-4 px-4">
+    <div>
+      <div
+        className="flex justify-between gap-16 max-sm:gap-4 max-sm:flex-wrap content-center items-center py-4 px-4"
+        data-aos="fade-up"
+      >
         <div className="w-full ">
           {/* <div className="w-full"> */}
           <p className="text-sm font-bold tracking-[2px] pb-2">OUR PORTFOLIO</p>
@@ -80,7 +96,9 @@ const ImageCarousel = () => {
         <div className=" ">
           <div className="flex gap-2">
             <button
-              className="bg-white flex items-center justify-center w-10 h-10 p-2 border rounded-full shadow-lg "
+              type="button"
+              aria-label="Previous work examples"
+              className="bg-white flex items-center justify-center w-10 h-10 p-2 border rounded-full shadow-lg transition-colors duration-200 hover:bg-gray-100"
               onClick={prevSlide}
             >
               <svg
@@ -88,17 +106,20 @@ const ImageCarousel = () => {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-arrow-left"
+                className="bi bi-arrow-left"
                 viewBox="0 0 16 16"
+                aria-hidden="true"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
                 />
               </svg>
             </button>
             <button
-              className=" bg-white flex items-center justify-center w-10 h-10 p-2 border rounded-full shadow-lg"
+              type="button"
+              aria-label="Next work examples"
+              className=" bg-white flex items-center justify-center w-10 h-10 p-2 border rounded-full shadow-lg transition-colors duration-200 hover:bg-gray-100"
               onClick={nextSlide}
             >
               <svg
@@ -106,11 +127,12 @@ const ImageCarousel = () => {
                 width="16"
                 height="16"
                 fill="currentColor"
-                class="bi bi-arrow-right"
+                className="bi bi-arrow-right"
                 viewBox="0 0 16 16"
+                aria-hidden="true"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
                 />
               </svg>
@@ -120,20 +142,33 @@ const ImageCarousel = () => {
       </div>
 
       <div className="relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-          {images
-            .slice(currentIndex, currentIndex + slidesToShow)
-            .map((image, index) => (
-              <div key={index} className="relative w-full h-72 md:h-96">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition duration-500 "
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                />
-              </div>
-            ))}
+        {/* Swapping the src alone had nothing to transition, so slides changed
+            with a hard cut. Keying each slide on the page it belongs to remounts
+            it, which replays the direction-aware entrance animation. */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4"
+          data-aos="fade-up-short"
+        >
+          {visible.map((image, index) => (
+            <div
+              key={`${start}-${index}`}
+              className={`relative w-full h-72 md:h-96 ${
+                direction === "next"
+                  ? "carousel-next"
+                  : direction === "prev"
+                  ? "carousel-prev"
+                  : ""
+              }`}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              />
+            </div>
+          ))}
         </div>
         {/* <button
             className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg"

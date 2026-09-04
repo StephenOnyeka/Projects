@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { GiSpookyHouse } from "react-icons/gi";
@@ -6,35 +6,43 @@ import { BsThreeDots } from "react-icons/bs";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// AOS is initialised once for the whole app in components/aos-provider.js, so
+// there is no per-page init here any more. Anything in the first viewport uses
+// the CSS-only .enter-* classes instead, because AOS holds [data-aos] elements
+// at opacity 0 until it hydrates - which made the hero flash blank on load.
 
-import { FaXTwitter } from "react-icons/fa6";
-import { FaSkype } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaFacebookF } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+const services = [
+  {
+    title: "Interior painting",
+    body: "Beautiful, durable finishes for every room.",
+    src: "/icons/4099285.svg",
+  },
+  {
+    title: "Variety of colors",
+    body: "Endless color possibilities for your perfect project.",
+    src: "/icons/6168373.svg",
+  },
+  {
+    title: "Qualified workers",
+    body: "Skilled professionals for flawless results.",
+    src: "/icons/wk.svg",
+  },
+  {
+    title: "Exterior painting",
+    body: "Perfect exterior look with our customized painting solutions",
+    icon: GiSpookyHouse,
+  },
+];
+
+const brandLogos = [1, 2, 3, 4, 5, 6];
 
 function HoMe() {
-    useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      easing: 'ease-in-out', // Animation easing
-      // once: true, // Whether to animate only once
-      // ... other AOS options
-    }); return () => {
-          AOS.refresh(); // Refresh AOS on component unmount or when dependencies change. Important!
-        };
-  }, []);
   return (
     <div className=" ">
       <Navbar />
       <div className=" pt-10 mx-auto max-w-7xl">
-        <section
-          className="px-8 flex max-sm:flex-wrap items-center justify-between  w-full"
-          data-aos="fade-up"
-        >
-          <div className="w-full md:w-1/2">
+        <section className="px-8 flex max-sm:flex-wrap items-center justify-between  w-full">
+          <div className="w-full md:w-1/2 enter-rise">
             <p className="text-xs font-bold text-primary tracking-[2px] pb-2">
               ADD COLOR TO YOUR LIFE
             </p>
@@ -44,25 +52,26 @@ function HoMe() {
               premium painting company
             </p>
             <Link href="/services">
-              <button className="text-sm bg-orange-400 text-white px-8 py-4 font-bold">
+              <button className="text-sm bg-orange-400 text-white px-8 py-4 font-bold transition-colors duration-200 hover:bg-orange-500">
                 View All Services
               </button>
             </Link>
           </div>
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 enter-fade">
             <Image
               className="h-auto lg:w-[600px]"
               src={"/images/homebg.webp"}
               width={700}
               height={700}
-              // layout="responsive"
+              alt="Painter finishing an interior wall"
+              priority
             />
           </div>
         </section>
       </div>
 
       <section className="my-10 py-16 bg-[#f1f2f3] ">
-        <div className="text-center">
+        <div className="text-center" data-aos="fade-up">
           <p className="text-xs font-bold text-primary tracking-[2px] pb-2">
             WHAT WE OFFER
           </p>
@@ -70,73 +79,49 @@ function HoMe() {
             Our painting services
           </p>
         </div>
+        {/* Each card reveals on its own so the row builds up left to right. One
+            data-aos on the grid fired the moment its top edge appeared, which
+            "revealed" cards that were still well below the fold. */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-center  px-4 py-4 mx-auto max-w-7xl w-full">
-          <div className="flex flex-col items-center w-full bg-white text-center group py-12 px-4 ">
-            <Image
-              src={"/icons/4099285.svg"}
-              className="text-blue-500"
-              width={70}
-              height={70}
-            />
-            <br />
-            <p className="text-primary text-xl font-bold">Interior painting</p>
-            <p className="text-slate-400 mb-2">
-              Beautiful, durable finishes for every room.
-            </p>
-            <BsThreeDots
-              size={30}
-              className="text-slate-400 group-hover:text-[#4159EE]"
-            />
-          </div>
-          <div className="flex flex-col items-center w-full bg-white text-center group py-12 px-4">
-            <Image src={"/icons/6168373.svg"} width={70} height={70} />
-            <br />
-            <p className="text-primary text-xl font-bold">Variety of colors</p>
-            <p className="text-slate-400">
-              Endless color possibilities for your perfect project.
-            </p>
-            {/* <p className="text-slate-400">Beautiful walls guaranteed</p> */}
-            <BsThreeDots
-              size={30}
-              className="text-slate-400 group-hover:text-[#4159EE]"
-            />
-          </div>
-          <div className="flex flex-col items-center w-full bg-white text-center group py-12 px-4">
-            <Image src={"/icons/wk.svg"} width={70} height={70} />
-            <br />
-            <p className="text-primary text-xl font-bold">Qualified workers</p>
-            <p className="text-slate-400">
-              Skilled professionals for flawless results.
-            </p>
-            <BsThreeDots
-              size={30}
-              className="text-slate-400 group-hover:text-[#4159EE]"
-            />
-          </div>
-          <div className="flex flex-col items-center w-full bg-white text-center group py-12 px-4">
-            <GiSpookyHouse className="w-56 h-16 text-[#4159EE]" /> <br />
-            <p className="text-primary text-xl font-bold">Exterior painting</p>
-            <p className="text-slate-400">
-              Perfect exterior look with our customized painting solutions
-            </p>
-            <BsThreeDots
-              size={30}
-              className="text-slate-400 group-hover:text-[#4159EE]"
-            />
-          </div>
+          {services.map(({ title, body, src, icon: Icon }, i) => (
+            <div
+              key={title}
+              className="flex flex-col items-center w-full bg-white text-center group py-12 px-4 transition-shadow duration-300 hover:shadow-lg"
+              data-aos="fade-up"
+              data-aos-delay={i * 100 || undefined}
+            >
+              {Icon ? (
+                <Icon className="w-56 h-16 text-[#4159EE]" />
+              ) : (
+                <Image src={src} width={70} height={70} alt="" />
+              )}
+              <br />
+              <p className="text-primary text-xl font-bold">{title}</p>
+              <p className="text-slate-400 mb-2">{body}</p>
+              <BsThreeDots
+                size={30}
+                className="text-slate-400 transition-colors duration-200 group-hover:text-[#4159EE]"
+              />
+            </div>
+          ))}
         </div>
       </section>
 
-      <section data-aos="fade-up" className="px-4 py-4 mx-auto max-w-7xl">
+      <section className="px-4 py-4 mx-auto max-w-7xl">
         <div className="flex max-md:flex-wrap items-center content-center justify-between gap-0 sm:gap-10 md:gap-14 lg:gap-20 xl:gap-28">
-          <div className="p-10 md:p-0 flex items-center justify-center max-sm:justify-start w-full md:w-1/2">
+          {/* The two halves come in from their own side instead of the whole
+              row sliding up as one block. */}
+          <div
+            className="p-10 md:p-0 flex items-center justify-center max-sm:justify-start w-full md:w-1/2"
+            data-aos="fade-right"
+          >
             <div className="h-auto w-[70%] max-md:w-[50%] max-sm:w-[70%] relative">
               <Image
                 className="w-full h-full"
                 src={"/images/home-image1(1).jpg"}
                 width={250}
                 height={500}
-                content="responsive"
+                alt="Freshly painted interior wall"
               />
               <Image
                 // className=" -mt-40 -ml-20 w-[90%] "
@@ -144,11 +129,11 @@ function HoMe() {
                 src={"/images/home-image1(2).jpg"}
                 width={250}
                 height={500}
-                content="responsive"
+                alt="Painter at work with a roller"
               />
             </div>
           </div>
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2" data-aos="fade-left">
             <p className="text-sm font-bold text-primary tracking-[2px] pb-2">
               PREMIUM QUALITY
             </p>
@@ -169,7 +154,7 @@ function HoMe() {
             </p>
             <br />
             <Link href="/services">
-              <button className="text-sm bg-orange-400 text-white px-8 py-3 font-bold">
+              <button className="text-sm bg-orange-400 text-white px-8 py-3 font-bold transition-colors duration-200 hover:bg-orange-500">
                 Our Services
               </button>
             </Link>
@@ -177,59 +162,43 @@ function HoMe() {
         </div>
         <br />
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 justify-items-center py-10 px-6 w-full">
-          <Image
-            src={"/images/logo1.webp"}
-            className="opacity-30 hover:opacity-100 transition duration-100 ease-in"
-            width={180}
-            height={100}
-          />
-          <Image
-            src={"/images/logo2.webp"}
-            className="opacity-30 hover:opacity-100 transition duration-100 ease-in"
-            width={180}
-            height={100}
-          />
-          <Image
-            src={"/images/logo3.webp"}
-            className="opacity-30 hover:opacity-100 transition duration-100 ease-in"
-            width={180}
-            height={100}
-          />
-          <Image
-            src={"/images/logo4.webp"}
-            className="opacity-30 hover:opacity-100 transition duration-100 ease-in"
-            width={180}
-            height={100}
-          />
-          <Image
-            src={"/images/logo5.webp"}
-            className="opacity-30 hover:opacity-100 transition duration-100 ease-in"
-            width={180}
-            height={100}
-          />
-          <Image
-            src={"/images/logo6.webp"}
-            className="opacity-30 hover:opacity-100 transition duration-100 ease-in"
-            width={180}
-            height={100}
-          />
+          {/* data-aos sits on a wrapper, not on the image: AOS's
+              `[data-aos^=fade][data-aos^=fade].aos-animate` rule wins on
+              specificity over Tailwind's opacity utilities, so putting it on the
+              image itself would pin it at opacity 1 and kill the dim/hover
+              effect. */}
+          {brandLogos.map((n, i) => (
+            <div key={n} data-aos="fade-up" data-aos-delay={i * 50 || undefined}>
+              <Image
+                src={`/images/logo${n}.webp`}
+                className="opacity-30 transition-opacity duration-300 ease-out hover:opacity-100"
+                width={180}
+                height={100}
+                alt=""
+              />
+            </div>
+          ))}
         </div>
       </section>
 
       <section className=" px-4 py-8 md:py-16 bg-[#4159EE] ">
         {/* <div className="flex flex-1 h-full border"> */}
         <div className="flex max-md:flex-wrap justify-between items-center max-md:gap-6 max-w-7xl mx-auto h-full">
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2" data-aos="fade-up">
             <p className="text-white text-xl md:text-2xl xl:text-4xl leading-7 max:sm:leading-6 font-semibold">
               Schedule an appointment to meet or email us your questions
             </p>
           </div>
-          <div className="flex gap-5 w-full md:w-1/2 justify-end max-md:justify-start">
-            <button className="bg-orange-400 text-white max-sm:text-sm font-semibold px-6 py-3">
+          <div
+            className="flex gap-5 w-full md:w-1/2 justify-end max-md:justify-start"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <button className="bg-orange-400 text-white max-sm:text-sm font-semibold px-6 py-3 transition-colors duration-200 hover:bg-orange-500">
               Request a Quote
             </button>
             <Link href="/contact">
-              <button className="px-7 py-3 border-2 max-sm:border max-sm:text-sm text-white font-semibold hover:bg-white hover:text-[#4159EE]">
+              <button className="px-7 py-3 border-2 max-sm:border max-sm:text-sm text-white font-semibold transition-colors duration-200 hover:bg-white hover:text-[#4159EE]">
                 Contact Us
               </button>
             </Link>
@@ -240,26 +209,35 @@ function HoMe() {
 
       <section className="px-4 py-10 bg-[#f1f2f3] h-full">
         <div className="mx-auto max-w-7xl">
-          <span className="text-center">
+          {/* This was a <span>, which stays display:inline even with block <p>
+              children - and transforms do not apply to inline boxes, so the
+              heading only faded while everything around it rose. */}
+          <div className="text-center" data-aos="fade-up">
             <p className="text-xs font-bold text-primary tracking-[2px] pb-2">
               TESTIMONIALS
             </p>
             <p className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-primary pb-4">
               Our customers say
             </p>
-          </span>
+          </div>
           <br />
-          <div
-            className="flex max-md:flex-wrap gap-8"
-            data-aos="fade-up"
-            data-aos-anchor-placement="center-bottom"
-          >
-            <div className="p-6 lg:p-10 bg-white w-full h-full">
+          {/* Two reveal decisions here. The row used to carry a single
+              data-aos with anchor-placement="center-bottom", so nothing moved
+              until the row's own centre had cleared the viewport bottom - on
+              cards this tall you were already looking at them. And a full
+              fade-up starts 100px low, which on a card this tall sweeps up
+              through the footer; fade-up-short (styles/globals.css) travels
+              32px instead. */}
+          <div className="flex max-md:flex-wrap gap-8">
+            <div
+              className="p-6 lg:p-10 bg-white w-full h-full"
+              data-aos="fade-up-short"
+            >
               <p className="lg:text-lg xl:text-xl text-primary leading-7 xl:leading-8 pb-4">
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
-                  stroke-width="0"
+                  strokeWidth="0"
                   version="1.1"
                   viewBox="0 0 16 16"
                   // height="1em"
@@ -281,6 +259,7 @@ function HoMe() {
                   src={"/images/1.jpg"}
                   width={55}
                   height={55}
+                  alt=""
                 />
                 <div className="flex flex-col">
                   <span className="text-primary font-bold">
@@ -291,12 +270,16 @@ function HoMe() {
                 </div>
               </div>
             </div>
-            <div className="p-6 lg:p-10 bg-white w-full h-full">
+            <div
+              className="p-6 lg:p-10 bg-white w-full h-full"
+              data-aos="fade-up-short"
+              data-aos-delay="100"
+            >
               <p className="lg:text-lg xl:text-xl text-primary leading-7 xl:leading-8 pb-4">
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
-                  stroke-width="0"
+                  strokeWidth="0"
                   version="1.1"
                   viewBox="0 0 16 16"
                   // height="1em"
@@ -318,6 +301,7 @@ function HoMe() {
                   src={"/images/2.jpg"}
                   width={55}
                   height={55}
+                  alt=""
                 />
                 <div className="flex flex-col">
                   <span className="text-primary font-bold">Felicia Garret</span>

@@ -113,12 +113,12 @@ function Handle() {
         <Link href={"/shop"}>
           <IoArrowBackCircleOutline
             size={40}
-            className="hover:opacity-50 mb-4"
+            className="mb-4 transition-opacity duration-200 hover:opacity-50"
           />
         </Link>
         <div
           key={product.handle}
-          className="lg:grid lg:grid-cols-7 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16"
+          className="lg:grid lg:grid-cols-7 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16 enter-rise"
         >
           {/* Product image */}
           <div className="lg:col-span-4">
@@ -129,7 +129,6 @@ function Handle() {
                 className="object-center object-cover"
                 width={500}
                 height={250}
-                layout="responsive"
               />
             </div>
           </div>
@@ -148,25 +147,29 @@ function Handle() {
                 <button
                   // onClick={checkout}
                   onClick={() => setIsLoading(!isLoading)}
-                  className="w-full bg-orange-400 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-orange-50 focus:ring-orange-500"
+                  className="w-full bg-orange-400 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white transition-colors duration-200 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-orange-50 focus:ring-orange-500"
                 >
                   {isLoading && (
+                    // These were `class=` and `stroke-width=`, which React drops
+                    // silently - so the spinner rendered with no animate-spin
+                    // and no stroke and just sat there.
                     <svg
-                      class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
+                      aria-hidden="true"
                     >
                       <circle
-                        class="opacity-25"
+                        className="opacity-25"
                         cx="12"
                         cy="12"
                         r="10"
                         stroke="currentColor"
-                        stroke-width="4"
+                        strokeWidth="4"
                       ></circle>
                       <path
-                        class="opacity-75"
+                        className="opacity-75"
                         fill="currentColor"
                         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                       ></path>
@@ -174,7 +177,7 @@ function Handle() {
                   )}
                   Pay {product.price}
                 </button>
-                <button className="w-full bg-white border rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-orange-900 hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-50 focus:ring-orange-500">
+                <button className="w-full bg-white border rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-orange-900 transition-colors duration-200 hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-50 focus:ring-orange-500">
                   Preview
                 </button>
               </div>
@@ -186,7 +189,7 @@ function Handle() {
                   redistribute these icons in their original or modified state.
                   <a
                     href=""
-                    className="font-medium text-gray-900 hover:text-gray-700"
+                    className="font-medium text-gray-900 transition-colors duration-200 hover:text-gray-700"
                   >
                     Read full license
                   </a>
@@ -197,35 +200,35 @@ function Handle() {
         </div>
         {/* ))} */}
         {/* Related products */}
-        <p className="mt-24 mb-8 font-semibold text-lg">
+        <p className="mt-24 mb-8 font-semibold text-lg" data-aos="fade-up">
           Customers also viewed
         </p>{" "}
         <div className="flex flex-wrap gap-x-6 lg:gap-x-8  gap-y-4 ">
-          {relatedProducts.map((item) => {
+          {relatedProducts.map((item, i) => {
             return (
-              <>
-                <Link
-                  key={item.id}
-                  href={`/products/${item.id}`}
-                  className="group"
-                >
-                  <div className="w-[250px] max-sm:w-[150px]">
-                    <Image
-                      alt={item.imageSrc}
-                      src={item.imageSrc}
-                      className="aspect-[6/6] max-sm:aspect-[4/4] w-full border rounded-lg bg-gray-200 object-cover group-hover:opacity-75"
-                      width={250}
-                      height={100}
-                    />
-                  </div>
-                  <h3 className="mt-4 font-medium text-sm text-gray-700">
-                    {item.name}
-                  </h3>
-                  <p className="mt-1 text-lg font-medium text-orange-500">
-                    {item.price}
-                  </p>
-                </Link>
-              </>
+              <Link
+                key={item.id}
+                href={`/products/${item.id}`}
+                className="group"
+                data-aos="fade-up"
+                data-aos-delay={i * 100 || undefined}
+              >
+                <div className="w-[250px] max-sm:w-[150px]">
+                  <Image
+                    alt={item.name}
+                    src={item.imageSrc}
+                    className="aspect-[6/6] max-sm:aspect-[4/4] w-full border rounded-lg bg-gray-200 object-cover transition-opacity duration-300 group-hover:opacity-75"
+                    width={250}
+                    height={100}
+                  />
+                </div>
+                <h3 className="mt-4 font-medium text-sm text-gray-700">
+                  {item.name}
+                </h3>
+                <p className="mt-1 text-lg font-medium text-orange-500">
+                  {item.price}
+                </p>
+              </Link>
             );
           })}
         </div>

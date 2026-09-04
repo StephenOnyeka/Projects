@@ -118,36 +118,37 @@ export default function Products({ products }) {
         {/* <div> */}
         <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
           {/* <div className="mx-auto mt-6 mb-0 font-semibold text-lg"> */}
-          <h2 className="text-2xl font-semibold">All Products</h2>
+          <h2 className="text-2xl font-semibold enter-rise">All Products</h2>
           <br />
           {/* <h2 className="sr-only">Products</h2> */}
 
           <div className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-            {
-  staticProducts.map((product) => {
-    return (
-      <Link key={product.id} href={`/products/${product.id}`}>
-        <div className="group">
-          <Image
-            alt={product.imageAlt}
-            src={product.imageSrc}
-            className="aspect-square w-full border rounded-lg bg-gray-200 object-cover group-hover:opacity-75 xl:aspect-[7/8]"
-            width={250}
-            height={100}
-            overlay="responsive"
-          />
-          <h3 className="mt-4 font-medium text-sm text-gray-700">
-            {product.name}
-          </h3>
-          <p className="mt-1 max-sm:mt-0 text-lg font-semibold text-green-900">
-            {product.price}
-          </p>
-        </div>
-      </Link>
-    );
-  })
-}
-          </div>          
+            {staticProducts.map((product, i) => {
+              return (
+                <Link key={product.id} href={`/products/${product.id}`}>
+                  <div
+                    className="group"
+                    data-aos="fade-up"
+                    data-aos-delay={(i % 4) * 100 || undefined}
+                  >
+                    <Image
+                      alt={product.imageAlt}
+                      src={product.imageSrc}
+                      className="aspect-square w-full border rounded-lg bg-gray-200 object-cover transition-opacity duration-300 group-hover:opacity-75 xl:aspect-[7/8]"
+                      width={250}
+                      height={100}
+                    />
+                    <h3 className="mt-4 font-medium text-sm text-gray-700">
+                      {product.name}
+                    </h3>
+                    <p className="mt-1 max-sm:mt-0 text-lg font-semibold text-green-900">
+                      {product.price}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
         {/* </div> */}
       </div>

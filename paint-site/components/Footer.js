@@ -1,9 +1,15 @@
 import React from 'react'
 import { FaXTwitter } from "react-icons/fa6";
-import { FaSkype } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+
+const socials = [
+  { name: "Facebook", icon: FaFacebookF },
+  { name: "LinkedIn", icon: FaLinkedin },
+  { name: "X", icon: FaXTwitter },
+  { name: "Instagram", icon: FaInstagram },
+];
 
 function Footer() {
   return (
@@ -12,7 +18,7 @@ function Footer() {
         <div className="bg-[#0A0300]">
           <div className="pt-16 pb-8 max-w-7xl mx-auto max-xl:px-8">
             <div className="flex justify-center text-white/50 gap-10 max-sm:flex-wrap max-sm:gap-10 ">
-              <div className="box w-full text-white/80">
+              <div className="box w-full text-white/80" data-aos="fade-up">
                 <div className="mb-10">
                   <div className="bg-[url('/images/AP3.jpg')] w-full h-10  bg-contain bg-no-repeat bg-left ">
                     {/* <div className="bg-[url('/images/AP3.jpg')] w-full h-40  bg-contain bg-no-repeat bg-center max-md:w-16 max-md:h-16 max-sm:w-12 max-sm:h-12"> */}
@@ -35,7 +41,11 @@ function Footer() {
                   </li>
                 </ul>
               </div>
-              <div className="box w-full text-white/80">
+              <div
+                className="box w-full text-white/80"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
                 <p className="text-white text-lg font-semibold">Office</p>
                 <br />
                 <ul className="font-light leading-7 max-sm:leading-7 max-sm:text-xs">
@@ -56,7 +66,11 @@ function Footer() {
                   </li>
                 </ul>
               </div>
-              <div className="box w-full text-white/80">
+              <div
+                className="box w-full text-white/80"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 <p className="text-white text-lg font-semibold">Links</p>
                 <br />
                 <ul className="font-light leading-9 max-sm:leading-7 max-sm:text-xs">
@@ -77,46 +91,28 @@ function Footer() {
                   </li>
                 </ul>
               </div>
-              <div className="box w-full">
+              <div
+                className="box w-full"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <p className="text-white text-lg font-semibold">Get in Touch</p>
                 <br />
+                {/* The hover state used to live on the icon, so the surrounding
+                    pill never reacted and `hover:text-white/50` just dimmed the
+                    glyph. On the link it fades border, background and icon
+                    together. */}
                 <div className="flex text-white gap-1">
-                  <a
-                    href=""
-                    className="border border-white/30 p-2.5 rounded-full"
-                  >
-                    <FaFacebookF
-                      size={15}
-                      className="hover:text-white/50 transition-all duration-100 ease-in"
-                    />
-                  </a>
-                  <a
-                    href=""
-                    className="border border-white/30 p-2.5 rounded-full"
-                  >
-                    <FaLinkedin
-                      size={15}
-                      className="hover:text-white/50 transition-all duration-100 ease-in"
-                    />
-                  </a>
-                  <a
-                    href=""
-                    className="border border-white/30 p-2.5 rounded-full"
-                  >
-                    <FaXTwitter
-                      size={15}
-                      className="hover:text-white/50 transition-all duration-100 ease-in"
-                    />
-                  </a>
-                  <a
-                    href=""
-                    className="border border-white/30 p-2.5 rounded-full"
-                  >
-                    <FaInstagram
-                      size={15}
-                      className="hover:text-white/50 transition-all duration-100 ease-in"
-                    />
-                  </a>
+                  {socials.map(({ name, icon: Icon }) => (
+                    <a
+                      key={name}
+                      href=""
+                      aria-label={name}
+                      className="border border-white/30 p-2.5 rounded-full transition-colors duration-200 hover:border-white hover:bg-white hover:text-[#0A0300]"
+                    >
+                      <Icon size={15} />
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>

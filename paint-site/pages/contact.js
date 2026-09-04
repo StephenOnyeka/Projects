@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Image from "next/image";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
+// AOS is initialised once for the whole app in components/aos-provider.js.
 
-import { FiPhoneCall } from "react-icons/fi";
 import { LiaPhoneVolumeSolid } from "react-icons/lia";
 
 import { IoLocationOutline } from "react-icons/io5";
@@ -15,34 +12,23 @@ import { BsEnvelope } from "react-icons/bs";
 import { IoMdPaperPlane } from "react-icons/io";
 import { RxAvatar } from "react-icons/rx";
 import { BsInfoCircle } from "react-icons/bs";
-import { GoPencil } from "react-icons/go";
 import { TfiPencil } from "react-icons/tfi";
 
 function Contact() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000, // Animation duration
-      easing: "ease-in-out", // Animation easing
-      // once: true, // Whether to animate only once
-      // ... other AOS options
-    });
-
-    return () => {
-      AOS.refresh(); // Refresh AOS on component unmount or when dependencies change. Important!
-    };
-  }, []);
   return (
     <div>
       <div className="bg-[#f1f2f3] ">
         <Navbar />
-        <div className="pt-12">
+        <div className="pt-12 enter-rise">
           <p className="text-4xl lg:text-5xl xl:text-6xl font-bold text-center">
             Contact
           </p>
         </div>
-        <section className="px-4 py-16 mx-auto max-w-7xl" data-aos="fade-up">
+        {/* First screenful - CSS entrance classes rather than AOS, which would
+            hold it at opacity 0 until hydration. */}
+        <section className="px-4 py-16 mx-auto max-w-7xl">
           <div className="flex max-md:flex-wrap items-center justify-between gap-4 max-md:gap-8">
-            <div className="w-full md:w-1/2">
+            <div className="w-full md:w-1/2 enter-rise">
               {/* <div className="w-full"> */}
               <p className="text-sm font-bold tracking-[2px] pb-2">
                 CONTACT US
@@ -75,12 +61,15 @@ function Contact() {
                 </span>
               </span>
             </div>
-            <form className="w-full md:w-1/2 ">
+            <form
+              className="w-full md:w-1/2 enter-rise"
+              style={{ animationDelay: "120ms" }}
+            >
               <div className="flex flex-col justify-items-center ">
                 {/* <div className="w-full"> */}
                 <div className=" ">
                   <div className="flex justify-between items-center gap-6 max-sm:flex-wrap">
-                    <span className="flex items-center gap-4 border-b border-black pb-2 w-full">
+                    <span className="flex items-center gap-4 border-b border-black pb-2 w-full transition-colors duration-200 focus-within:border-orange-400">
                       <RxAvatar className="size-8" />
                       <input
                         type="text"
@@ -88,7 +77,7 @@ function Contact() {
                         className="w-full placeholder:text-black bg-transparent outline-none"
                       />
                     </span>
-                    <span className="flex items-center gap-4 border-b border-black pb-2 w-full">
+                    <span className="flex items-center gap-4 border-b border-black pb-2 w-full transition-colors duration-200 focus-within:border-orange-400">
                       <BsEnvelope className="size-8" />
                       <input
                         type="text"
@@ -99,7 +88,7 @@ function Contact() {
                   </div>
                   <br />
                   <div className="flex justify-between items-center gap-6 max-sm:flex-wrap">
-                    <span className="flex items-center gap-4 border-b border-black pb-2 w-full">
+                    <span className="flex items-center gap-4 border-b border-black pb-2 w-full transition-colors duration-200 focus-within:border-orange-400">
                       <LiaPhoneVolumeSolid className="size-8" />
                       <input
                         type="text"
@@ -107,7 +96,7 @@ function Contact() {
                         className="w-full placeholder:text-black bg-transparent outline-none"
                       />
                     </span>
-                    <span className="flex items-center gap-4 border-b border-black pb-2 w-full">
+                    <span className="flex items-center gap-4 border-b border-black pb-2 w-full transition-colors duration-200 focus-within:border-orange-400">
                       <BsInfoCircle className="size-8" />
                       <input
                         type="text"
@@ -118,7 +107,9 @@ function Contact() {
                   </div>
                   <br />
                   <br />
-                  <span className="flex gap-2 border-b border-black">
+                  {/* The inputs set outline-none, so without this the fields
+                      gave no focus feedback at all. */}
+                  <span className="flex gap-2 border-b border-black transition-colors duration-200 focus-within:border-orange-400">
                     <TfiPencil className="size-6" />
                     <textarea
                       name=""
@@ -131,7 +122,7 @@ function Contact() {
                   </span>
                   <br />
                   {/* <br /> */}
-                  <button className="flex items-center gap-2 text-sm bg-orange-400 text-white px-8 py-4 font-bold">
+                  <button className="flex items-center gap-2 text-sm bg-orange-400 text-white px-8 py-4 font-bold transition-colors duration-200 hover:bg-orange-500">
                     <IoMdPaperPlane className="size-5" /> Get in Touch
                   </button>
                 </div>
@@ -142,12 +133,19 @@ function Contact() {
         </section>
       </div>
       <section>
-        <div className="h-screen/2 lg:h-screen/1.5 xl:h-screen/2">
+        {/* The map is between half a viewport and one and a half tall, so a
+            full fade-up's 100px start would still be travelling long after the
+            top edge appeared. */}
+        <div
+          className="h-screen/2 lg:h-screen/1.5 xl:h-screen/2"
+          data-aos="fade-up-short"
+        >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d79473.25101719813!2d-0.119545!3d51.503325!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTHCsDMwJzEyLjAiTiAwwrAwNycxMC40Ilc!5e0!3m2!1sen!2sus!4v1736831401784!5m2!1sen!2sus"
-            allowfullscreen=""
+            title="Our office location on Google Maps"
+            allowFullScreen
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
             className="w-full h-full"
           ></iframe>
         </div>
