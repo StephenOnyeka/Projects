@@ -49,17 +49,6 @@ html {
   }
 }
 
-@keyframes page-enter {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 10px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 @keyframes carousel-next {
   from {
     opacity: 0;
@@ -88,10 +77,6 @@ html {
 
 .enter-fade {
   animation: enter-fade 0.8s ease-out both;
-}
-
-.page-enter {
-  animation: page-enter 0.35s ease-out both;
 }
 
 .carousel-next {
@@ -128,7 +113,6 @@ html {
   [data-aos],
   .enter-rise,
   .enter-fade,
-  .page-enter,
   .carousel-next,
   .carousel-prev {
     opacity: 1 !important;

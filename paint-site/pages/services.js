@@ -82,6 +82,7 @@ function Services() {
                   width={250}
                   height={500}
                   alt="Wallpapered interior"
+                  priority
                 />
                 <Image
                   // className=" -mt-40 -ml-20 w-[90%] "

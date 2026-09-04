@@ -129,6 +129,7 @@ function Handle() {
                 className="object-center object-cover"
                 width={500}
                 height={250}
+                priority
               />
             </div>
           </div>

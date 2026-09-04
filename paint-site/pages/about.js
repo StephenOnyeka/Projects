@@ -39,6 +39,7 @@ export default function About() {
                 width={250}
                 height={500}
                 alt="Interior wall being painted"
+                priority
               />
               <Image
                 // className=" -mt-40 -ml-20 w-[90%] "
