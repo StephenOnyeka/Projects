@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
-import NVBar from "../navbar/NVBar";
 
 import Footer1 from "../footer1/footer1";
 import Footer2 from "../footer2/footer2";
@@ -18,7 +17,6 @@ function ContactUs({ cartItems, subtotal }) {
   const Loading = () => {
     return (
       <>
-        <NVBar />
         <Skeleton height={360} />
 
         <div id="ContactUs">
@@ -54,7 +52,6 @@ function ContactUs({ cartItems, subtotal }) {
   const ShowProduct = () => {
     return (
       <>
-        <NVBar cartItems={cartItems} subtotal={subtotal} />
         <div id="contactUs-Background">
           <div className="contactUs-Background_container">
             <h1>Contact Us</h1>

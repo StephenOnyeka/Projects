@@ -1,7 +1,6 @@
 import React from "react";
 import "../App.css";
 
-import NVBar from "./navbar/NVBar";
 import Header from "./header";
 import Logo from "./swiper/swiper";
 import Random from "./random";
@@ -10,14 +9,10 @@ import Span from "../span";
 import Footer1 from "./footer1/footer1";
 import Footer2 from "./footer2/footer2";
 
-function Home({cartItems,subtotal}) {
+function Home() {
 
   return (
     <div>
-      <NVBar
-        cartItems={cartItems}
-        subtotal={subtotal}
-      />
       <Header />
       <Logo />
       <Random />

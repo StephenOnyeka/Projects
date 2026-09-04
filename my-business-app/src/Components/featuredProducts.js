@@ -1,5 +1,5 @@
-import { React, useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 import Data from "./products.json";
 
 import globe from "./logos/globe-free-img.png";

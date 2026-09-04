@@ -57,7 +57,7 @@ function Signin_signup() {
     if (emailRef.current) {
       emailRef.current.value = oauthEmail;
     }
-  }, []);
+  }, [oauthEmail]);
 
   const handleLoginSuccess = ({ provider, data }) => {
     if ((data.name, data.email)) {

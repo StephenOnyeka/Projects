@@ -2,7 +2,7 @@
 // import React, { useState, useEffect } from "react";
 // import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Signin_signup from "./signup-signin/signup-signin"
+import SigninSignup from "./signup-signin/signup-signin"
   
 // import Home from "./Components/Home";
 // import About from "./Components/Routed components/About";
@@ -77,7 +77,7 @@ function App() {
 
   return (
     <div>
-      <Signin_signup />  
+      <SigninSignup />  
     </div>
     // <Routes>
     //   {/* <Route exact path="/" element={<FeaturedProducts />} /> */}

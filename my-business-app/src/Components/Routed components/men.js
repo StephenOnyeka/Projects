@@ -51,6 +51,9 @@ function Men() {
       <>
         <div id="FeaturedProducts">
           <h1>Men</h1>
+          <div className="category-back-link">
+            <Link to="/" className="back-btn">&larr; Back to Home</Link>
+          </div>
           <div className="featuredProducts_container">
             {items
               .filter((product) => product.category === "Men")

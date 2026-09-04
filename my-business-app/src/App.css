@@ -891,6 +891,13 @@ section h3 {
 .relatedProducts_cards img {
   width: 240px;
   height: 240px;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.relatedProducts_cards img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 .relatedProducts_cards span {
   font-size: 14px;
@@ -909,7 +916,8 @@ section h3 {
 #cart {
   text-align: center;
   width: 100%;
-  /* overflow: hidden; */
+  padding-top: 130px;
+  padding-bottom: 50px;
 }
 
 #wrapper {
@@ -1483,4 +1491,54 @@ td .btn-remove {
     cursor: pointer;
     font-family: "Lato", sans-serif;
   }
+}
+
+.category-back-link {
+  text-align: center;
+  margin-top: -10px;
+  margin-bottom: 25px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #0084d6 !important;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #005a94 !important;
+  text-decoration: underline;
+  transform: translateX(-3px);
+}
+
+.modal-close-icon {
+  position: absolute;
+  top: -8px;
+  right: -5px;
+  background: transparent !important;
+  border: none !important;
+  color: #777 !important;
+  font-size: 22px !important;
+  font-weight: bold;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px 8px !important;
+  transition: color 0.2s ease;
+}
+
+.modal-close-icon:hover {
+  color: #111 !important;
+  background: transparent !important;
+  border: none !important;
 }

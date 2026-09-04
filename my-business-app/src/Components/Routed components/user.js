@@ -1,5 +1,4 @@
 import React from "react";
-import NVBar from "../navbar/NVBar";
 // import {
 //   SignOutButton,
 //   SignInButton,
@@ -11,7 +10,6 @@ import NVBar from "../navbar/NVBar";
 function User({ data, setData }) {
   const localName = localStorage.getItem("name");
   const oauthName = localStorage.getItem("oauthName");
-  const oauthSignup = localStorage.getItem("oauthSignUp");
 
   
   const logout = () => {
@@ -27,7 +25,6 @@ function User({ data, setData }) {
   // const { user } = useUser();
   return (
     <div id="User">
-      <NVBar />
       <div id="user_container">
         <h2>
           Welcome (<i>{localName}{oauthName}</i>)!

@@ -18,6 +18,12 @@ body {
   color: white;
   z-index: 999;
 }
+#navbar.solid-nav {
+  /* background: #1e2430;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12); */
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    transparent;
+}
 .menu-icon > i {
   display: none;
 }

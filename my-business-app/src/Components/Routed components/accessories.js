@@ -7,7 +7,7 @@ import Footer2 from "../footer2/footer2";
 import Data from "../products.json";
 
 function Accessories() {
-  const [items, setItems] = useState(Data);
+  const [items] = useState(Data);
   const [loading, setLoading] = useState(true);
 
    useEffect(() => {
@@ -48,9 +48,12 @@ function Accessories() {
   const ShowProduct = () => {
     return (
       <>
-      <div id="FeaturedProducts">
-        <h1>Accessories</h1>
-        <div className="featuredProducts_container">
+        <div id="FeaturedProducts">
+          <h1>Accessories</h1>
+          <div className="category-back-link">
+            <Link to="/" className="back-btn">&larr; Back to Home</Link>
+          </div>
+          <div className="featuredProducts_container">
           {items.filter((product)=> product.category === "Accessories")
             .map((product) => (
             <div className="product_cards" key={product.id}>

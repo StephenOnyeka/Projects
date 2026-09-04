@@ -48,6 +48,9 @@ const Everything = () => {
       <>
         <div id="FeaturedProducts">
           <h1>Our Collection</h1>
+          <div className="category-back-link">
+            <Link to="/" className="back-btn">&larr; Back to Home</Link>
+          </div>
           <div className="featuredProducts_container">
             {Data.map((product) => (
               <div className="product_cards" key={product.id}>

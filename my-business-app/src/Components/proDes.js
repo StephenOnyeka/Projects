@@ -1,17 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link, Outlet } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { Link, Outlet, useNavigate, useParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import Data from "./products.json";
 import Modal from "react-modal";
 
 function ProDes({ addToCart }) {
-  const [products, setProducts] = useState(Data);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const product = Data.find((product) => product.id === parseInt(id));
+
+  const relatedProducts = React.useMemo(() => {
+    if (!product) return [];
+    // Prioritize products from the same category
+    const sameCategory = Data.filter(
+      (item) => item.id !== product.id && item.category === product.category
+    );
+    // Other products if we need more to reach 4
+    const otherProducts = Data.filter(
+      (item) => item.id !== product.id && item.category !== product.category
+    );
+    return [...sameCategory, ...otherProducts].slice(0, 4);
+  }, [product]);
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -23,33 +34,33 @@ function ProDes({ addToCart }) {
   };
   const customStyles = {
     content: {
-      width: "260px", 
-      height: "90px",
+      maxWidth: "360px",
+      width: "90%",
+      height: "auto",
       margin: "auto",
-      top: "50px", 
-      transform: "translateY(-180%)", 
+      top: "100px",
+      borderRadius: "8px",
+      padding: "24px 20px",
+      position: "relative",
+      boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
     },
   };
 
-  const function1 = () => {
-    addToCart(product);
-  };
   const handleClick = () => {
-    function1();
-    // showAlert();
+    if (addToCart && product) {
+      addToCart(product);
+    }
     openModal();
   };
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * Data.length);
-    setProducts(Data[randomIndex]);
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setLoading(true);
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000);
-  });
+    }, 400);
+    return () => clearTimeout(timer);
+  }, [id]);
 
   const Loading = () => {
     return (
@@ -91,23 +102,18 @@ function ProDes({ addToCart }) {
 
             <div className="productDescription_content-3">
               <p>Related Products</p>
-              {products ? (
-                <div key={products.id} className="relatedProducts_container">
-                  <div className="relatedProducts_cards">
-                    <Link to={`/product/${products.id}`}>
-                      <Skeleton height={240} width={240} />
-                    </Link>
+              <div className="relatedProducts_container">
+                {[1, 2, 3, 4].map((n) => (
+                  <div key={n} className="relatedProducts_cards">
+                    <Skeleton height={240} width={240} />
                     <h4>
-                      <Skeleton height={60}/>
+                      <Skeleton height={20} />
                     </h4>
                   </div>
-                </div>
-              ) : (
-                <p><b>404 Error...</b> Page Not Found!</p>
-              )}
+                ))}
+              </div>
             </div>
           </div>
-          {/* <button onClick={() => navigate(-1)}> Go back</button> */}
         </div>
       </>
     );
@@ -117,28 +123,41 @@ function ProDes({ addToCart }) {
     return (
       <>
         <div>
-          {/* <button onClick={openModal}>Show Alert</button>         */}
           <Modal
             style={customStyles}
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
+            ariaHideApp={false}
           >
-            <div className="alert">
-              <p> Your product is added to cart!</p>
+            <div className="alert" style={{ position: "relative" }}>
+              <button
+                onClick={closeModal}
+                className="modal-close-icon"
+                aria-label="Close modal"
+              >
+                &times;
+              </button>
+              <p style={{ margin: "10px 0 16px 0", fontSize: "15px", color: "#333", lineHeight: "1.4" }}>
+                <strong>"{product?.title}"</strong> is added to cart!
+              </p>
               <button>
                 <Link to="/cart"> See cart</Link>
               </button>
-              {/* <button onClick={closeModal}>Close</button> */}
             </div>
           </Modal>
 
           {product ? (
             <>
               <div id="productDescription">
+                <div className="category-back-link" style={{ textAlign: "left", marginBottom: "20px" }}>
+                  <button onClick={() => navigate(-1)} className="back-btn">
+                    &larr; Go back
+                  </button>
+                </div>
                 <div className="productDescription_container">
                   <div className="productDescription_content-1">
                     <section id="im_sec">
-                      <img alt="product image" src={product.image} />
+                      <img alt={product.title} src={product.image} />
                     </section>
 
                     <section>
@@ -176,27 +195,32 @@ function ProDes({ addToCart }) {
 
                   <div className="productDescription_content-3">
                     <p id="title">Related Products</p>
-                    {products ? (
-                      <div
-                        key={products.id}
-                        className="relatedProducts_container"
-                      >
-                        <div className="relatedProducts_cards">
-                          <Link to={`/product/${products.id}`}>
-                            <img alt="product image" src={products.image} />
-                          </Link>
-                          <h4>{products.title}</h4>
-                          <span>{products.category}</span>
-                          <p>${products.price}</p>
-                        </div>
+                    {relatedProducts && relatedProducts.length > 0 ? (
+                      <div className="relatedProducts_container">
+                        {relatedProducts.map((relProduct) => (
+                          <div
+                            key={relProduct.id}
+                            className="relatedProducts_cards"
+                          >
+                            <Link to={`/product/${relProduct.id}`}>
+                              <img alt={relProduct.title} src={relProduct.image} />
+                            </Link>
+                            <h4>{relProduct.title}</h4>
+                            <span>{relProduct.category}</span>
+                            <p>${relProduct.price}</p>
+                          </div>
+                        ))}
                       </div>
                     ) : (
                       <p> Loading...</p>
                     )}
                   </div>
                 </div>
-                {/* <button onClick={() => navigate("/")}> Go back</button> */}
-                <div id="return"><Link to="/"> ← Go back</Link></div>
+                <div id="return">
+                  <button onClick={() => navigate(-1)} className="back-btn" style={{ fontSize: "1.15rem" }}>
+                    &larr; Go back
+                  </button>
+                </div>
               </div>
             </>
           ) : (

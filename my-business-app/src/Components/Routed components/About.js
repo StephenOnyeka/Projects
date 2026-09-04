@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
-import NVBar from "../navbar/NVBar";
 
 import globe from "../logos/globe-free-img.png";
 import lock from "../logos/lock-free-img.png";
@@ -24,7 +23,6 @@ function About({ cartItems, subtotal }) {
   const Loading = () => {
     return (
       <>
-        <NVBar />
         <div>
           <div id="Fore">
             <Skeleton height={500} />
@@ -63,7 +61,6 @@ function About({ cartItems, subtotal }) {
   const ShowProduct = () => {
     return (
       <>
-        <NVBar cartItems={cartItems} subtotal={subtotal} />
         <div id="Fore">
           <div id="aboutBackground">
             <div className="aboutBackground_container">
@@ -75,8 +72,6 @@ function About({ cartItems, subtotal }) {
             <div className="about_container">
               <div className="about_content-1">
                 <section>
-                  <span className="element-divider-seperator"></span>
-
                   <p className="h2">Who We Are</p>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem
@@ -108,32 +103,32 @@ function About({ cartItems, subtotal }) {
                 <section className="gridFlex_container">
                   <div className="gridFlex_content">
                     <div className="imageCon">
-                      <img src="/images/example.png" alt="" />
+                      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Harvey Spectre" />
                       <h3>Harvey Spectre</h3>
                       <p>Founder-CEO</p>
                     </div>
                     <div className="imageCon">
-                      <img src="/images/example.png" alt="" />
+                      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Jessica Pearson" />
                       <h3>Jessica Pearson</h3>
                       <p>COO</p>
                     </div>
                     <div className="imageCon">
-                      <img src="/images/example.png" alt="" />
+                      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Rachel Zain" />
                       <h3>Rachel Zain</h3>
                       <p>Marketing Head</p>
                     </div>
                     <div className="imageCon">
-                      <img src="/images/example.png" alt="" />
+                      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Luise Litt" />
                       <h3>Luise Litt</h3>
                       <p>Lead Developer</p>
                     </div>
                     <div className="imageCon">
-                      <img src="/images/example.png" alt="" />
+                      <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Katrina Bennett" />
                       <h3>Katrina Bennett</h3>
                       <p>Intern Designer</p>
                     </div>
                     <div className="imageCon">
-                      <img src="/images/example.png" alt="" />
+                      <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Mike Ross" />
                       <h3>Mike Ross</h3>
                       <p>Intern Designer</p>
                     </div>

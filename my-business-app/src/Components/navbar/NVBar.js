@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import "./nav.css";
 
 function NVBar({ cartItems, subtotal }) {
   const [showNavbar, setShowNavbar] = useState(false);
-  // const [menuOpen, setMenuOpen] = useState(false);
-  // const [icon, setIcon] = useState(false);
+  const location = useLocation();
+  const isSolidNav = location.pathname === "/cart" || location.pathname === "/user";
 
   const handleShowNavbar = () => {setShowNavbar(!showNavbar)};
 
   return (
-    <nav id="navbar">
+    <nav id="navbar" className={isSolidNav ? "solid-nav" : ""}>
       <div className="container">
         <Link to="/" className="title">
           DNK{" "}

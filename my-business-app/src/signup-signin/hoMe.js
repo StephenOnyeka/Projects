@@ -1,8 +1,8 @@
 import "react-loading-skeleton/dist/skeleton.css";
 import React, { useState, useEffect} from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "../App.css";
-// import Signin_signup from "./signup-signin";
+import NVBar from "../Components/navbar/NVBar";
 
 import Home from "../Components/Home";
 import About from "../Components/Routed components/About";
@@ -93,8 +93,16 @@ function HoMe({data, setData}) {
    }, 1000);
  });
 
+  const location = useLocation();
+  const hideNavbar =
+    ["/everything", "/men", "/women", "/accessories"].includes(
+      location.pathname.toLowerCase()
+    ) || location.pathname.toLowerCase().startsWith("/product");
+  const showNavbar = !hideNavbar;
+
   return (
     <div>
+      {showNavbar && <NVBar cartItems={cartItems} subtotal={subtotal} />}
       <Routes>
         {/* <Route exact path="/" element={<FeaturedProducts />} /> */}
         <Route
